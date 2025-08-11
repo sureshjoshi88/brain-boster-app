@@ -142,9 +142,9 @@ const Quizzes = () => {
          <div className="bg-gray-100 shadow-2xl p-3">
           {questions[subject][level].map((opt, index) => (
             <div key={index}>
-              <p className="font-medium">{opt.question}</p>
+              <p className="font-medium text-xl ps-4">{opt.question}</p>
               {opt.options.map((opt, ind) => (
-                <button key={ind} className="border p-2 rounded w-100 flex">{opt}</button>
+                <button key={ind} className="border p-2 rounded-full w-100 flex font-semibold m-3">{opt}</button>
 
               ))}
             </div>
