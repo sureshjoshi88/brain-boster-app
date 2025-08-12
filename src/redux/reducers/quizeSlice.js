@@ -1,10 +1,11 @@
 import { createSlice} from "@reduxjs/toolkit";
-import { scienceQuestions } from "../../data/Question";
+// import { scienceQuestions } from "../../data/Question";
+import questions from "../../data/Question";
 
 const quizeSlice = createSlice({
     name: "quize",
     initialState: {
-        question: scienceQuestions,
+        question: questions,
         currentIndex: 0,
         score: 0,
         selectedOptions: {},

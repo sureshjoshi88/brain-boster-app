@@ -129,17 +129,19 @@ const Quizzes = () => {
             <img src={subj.image} alt={subj.name} className="h-20 mb-4" />
             <h2 className="text-xl font-semibold mb-2">{subj.name}</h2>
             <p className="text-gray-600 mb-4">{subj.description}</p>
-            <button
+          <div className="flex gap-8">
+              <button
               onClick={() => handleStart(subj.id)}
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+              className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-800 transition"
             >
               Start Quiz
             </button>
-            <select name="" id="" value={level} onChange={(e)=>setLevel(e.target.value)}>
+            <select className="border rounded h-8 p-1 border-gray-600" value={level} onChange={(e)=>setLevel(e.target.value)}>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
             </select>
+          </div>
           </div>
         ))}
       </div>
