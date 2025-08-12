@@ -140,10 +140,8 @@ const Quizzes = () => {
   }
 
   return (
+
     <div>
-
-
-
 
       <div>
         {!starts ? (
@@ -213,7 +211,7 @@ const Quizzes = () => {
                       key={ind}
                       onClick={() => dispatch(checkAnswer(opt))}
                       className={`border p-2 rounded-full w-full font-semibold m-2 
-                      ${selectedOptions[currentIndex] === opt ? "bg-green-200" : "hover:bg-green-100"}`}
+                      ${selectedOptions[currentIndex] === opt ? "bg-green-500" : "hover:bg-green-100"}`}
                     >
                       {opt}
                     </button>

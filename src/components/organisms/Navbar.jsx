@@ -21,6 +21,7 @@ const Navbar = () => {
   const navigate = useNavigate()
 
   const isAuthenticated = localStorage.getItem("currentUser");
+  const user = JSON.parse(isAuthenticated)
   return (
     <>
       <nav className="bg-white w-full  shadow-md px-4 py-3">
@@ -132,7 +133,7 @@ const Navbar = () => {
                   alt="userIcon"
                   className="w-7 h-7 rounded-full cursor-pointer"
                 />
-                <p className="cursor-pointer" onClick={() => setIsOpen1(!isOpen1)}>User</p>
+                <p className="cursor-pointer text-gray-700 font-semibold  text-lg" onClick={() => setIsOpen1(!isOpen1)}>{user?.name || "Guest"}</p>
 
               </div>
             </div>
