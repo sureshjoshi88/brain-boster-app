@@ -1,11 +1,7 @@
-
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-
 import { useTimer } from "react-timer-hook";
 import { MdOutlineWatchLater } from "react-icons/md";
-import { useState } from "react";
-
-
 import {
   nextQuestion,
   preQuestion,
@@ -79,61 +75,6 @@ const Quizzes = () => {
   //   },
   // ];
 
-  // const [starts, setStarts] = useState(false);
-  // const [subject, setSubject] = useState("javascript");
-  // const [level, setLevel] = useState("easy");
-
-  // const handleStart = (selectedSubject) => {
-  //   setSubject(selectedSubject);
-  //   setStarts(true);
-
-  // };
-  //   const dispatch = useDispatch();
-  //   const { question, score, currentIndex, selectedOptions, isFinished } = useSelector((state) => state.quize)
-
-  //   const currentQuestion = question[currentIndex]
-
-  //   const handleoptionClick = (option) => {
-  //     dispatch(checkAnswer(option))
-  //   }
-
-  //   const [quizestart, setQuizestart] = useState(false)
-
-  //   const time = new Date();
-  //   time.setMinutes(time.getMinutes() + 5); // 5 minutes
-  //   const {
-  //     seconds,
-  //     minutes,
-  //     start,
-  //     restart
-  //   } = useTimer({
-  //     expiryTimestamp: time,
-  //     autoStart: false,
-  //     onExpire: () => {
-  //       // dispatch(resetquize())
-  //       dispatch(resetIsFinished())
-  //     },
-  //   });
-
-
-  // const startTime = ()=>{
-  //     const time = new Date();
-  //     time.setMinutes(time.getMinutes() + 5);
-  //     restart(time);
-  //     setQuizestart(true);
-  // }
-  // const resetTime = ()=>{
-  //     const time = new Date();
-  //     time.setMinutes(time.getMinutes() + 5);
-  //     restart(time);
-  //     setQuizestart(false);
-  // }
-
-
-
-
-
-
   const dispatch = useDispatch();
 
   const {
@@ -143,7 +84,7 @@ const Quizzes = () => {
     currentIndex,
     score,
     selectedOptions,
-    isFinished
+    isFinished,
   } = useSelector((state) => state.quize);
 
   const [starts, setStarts] = useState(false);
@@ -198,7 +139,6 @@ const Quizzes = () => {
     setQuizestart(false);
   }
 
-
   return (
     <div>
 
@@ -235,34 +175,34 @@ const Quizzes = () => {
         ) : (
           <div className="flex justify-center items-center mt-6">
 
-            <div className="flex justify-between items-center mb-4">
-              <div>
-                <h1 className="text-2xl font-bold">Science</h1>
-                <p className="text-sm text-gray-500">Calculus Basics Quiz</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="text-lg flex items-center gap-1">
-                  <span><MdOutlineWatchLater /></span>
-                  <div>
-                    <span>{minutes}</span>:<span>{seconds < 10 ? `0${seconds}` : seconds}</span>
-                  </div>
-                </div>
-                <span className="flex items-center gap-1 text-yellow-500">
-                  💰 100
-                </span>
-              </div>
-            </div>
-
-            <div className="mb-6 flex  justify-between w-full items-center">
-              <p className="font-medium mb-2 ">Question {currentIndex + 1} of {questionsData.length}</p>
-              <div className="w-50 bg-gray-200 h-2 rounded-full">
-                <div className="bg-blue-600 h-2 rounded-full " style={{ width: `${((currentIndex + 1) / questionsData.length) * 100}%` }}
-                ></div>
-              </div>
-            </div>
 
 
             <div className="bg-gray-50 shadow-2xl p-3 rounded max-w-lg w-full">
+              <div className="flex justify-between items-center mb-4">
+                <div>
+                  <h1 className="text-2xl font-bold">Science</h1>
+                  <p className="text-sm text-gray-500">Calculus Basics Quiz</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="text-lg flex items-center gap-1">
+                    <span><MdOutlineWatchLater /></span>
+                    <div>
+                      <span>{minutes}</span>:<span>{seconds < 10 ? `0${seconds}` : seconds}</span>
+                    </div>
+                  </div>
+                  <span className="flex items-center gap-1 text-yellow-500">
+                    💰 100
+                  </span>
+                </div>
+              </div>
+
+              <div className="mb-6 flex  justify-between w-full items-center">
+                <p className="font-medium mb-2 ">Question {currentIndex + 1} of {currentArray.length}</p>
+                <div className="w-50 bg-gray-200 h-2 rounded-full">
+                  <div className="bg-blue-600 h-2 rounded-full " style={{ width: `${((currentIndex + 1) / currentArray.length) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
               {!isFinished ? (
                 <>
                   <p className="font-medium text-xl mb-4">
