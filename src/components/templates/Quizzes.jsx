@@ -70,11 +70,12 @@ const Quizzes = () => {
 
   const [starts, setStarts] = useState(false);
   const [subject, setSubject] = useState("javascript");
-  const [level, setLevel] = useState("easy"); // default difficulty
+  const [level, setLevel] = useState("easy");
 
   const handleStart = (selectedSubject) => {
     setSubject(selectedSubject);
     setStarts(true);
+
   };
   //   const dispatch = useDispatch();
   //   const { question, score, currentIndex, selectedOptions, isFinished } = useSelector((state) => state.quize)
