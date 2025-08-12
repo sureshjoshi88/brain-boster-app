@@ -135,6 +135,11 @@ const Quizzes = () => {
             >
               Start Quiz
             </button>
+            <select name="" id="" value={level} onChange={(e)=>setLevel(e.target.value)}>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
           </div>
         ))}
       </div>
