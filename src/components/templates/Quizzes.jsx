@@ -252,6 +252,16 @@ const Quizzes = () => {
                   </span>
                 </div>
               </div>
+
+            <div className="mb-6 flex  justify-between w-full items-center">
+                <p className="font-medium mb-2 ">Question {currentIndex + 1} of {question.length}</p>
+                <div className="w-50 bg-gray-200 h-2 rounded-full">
+                  <div className="bg-blue-600 h-2 rounded-full " style={{ width: `${((currentIndex + 1) / question.length) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
+
+
           <div className="bg-gray-50 shadow-2xl p-3 rounded max-w-lg w-full">
             {!isFinished ? (
               <>
