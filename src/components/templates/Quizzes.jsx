@@ -6,11 +6,11 @@ import { MdOutlineWatchLater } from "react-icons/md";
 import { useState } from "react";
 
 
-import { 
-  nextQuestion, 
-  preQuestion, 
-  resetquize, 
-  checkAnswer, 
+import {
+  nextQuestion,
+  preQuestion,
+  resetquize,
+  checkAnswer,
   resetIsFinished,
   setSubject,
   setDifficulty
@@ -134,8 +134,8 @@ const Quizzes = () => {
 
 
 
-   const dispatch = useDispatch();
-  
+  const dispatch = useDispatch();
+
   const {
     questionsData,
     currentSubject,
@@ -167,257 +167,148 @@ const Quizzes = () => {
 
 
 
-  
+
+  const time = new Date();
+  time.setMinutes(time.getMinutes() + 5); // 5 minutes
+  const {
+    seconds,
+    minutes,
+    start,
+    restart
+  } = useTimer({
+    expiryTimestamp: time,
+    autoStart: false,
+    onExpire: () => {
+      // dispatch(resetquize())
+      dispatch(resetIsFinished())
+    },
+  });
+
+
+  const startTime = () => {
     const time = new Date();
-    time.setMinutes(time.getMinutes() + 5); // 5 minutes
-    const {
-      seconds,
-      minutes,
-      start,
-      restart
-    } = useTimer({
-      expiryTimestamp: time,
-      autoStart: false,
-      onExpire: () => {
-        // dispatch(resetquize())
-        dispatch(resetIsFinished())
-      },
-    });
-
-
-  const startTime = ()=>{
-      const time = new Date();
-      time.setMinutes(time.getMinutes() + 5);
-      restart(time);
-      setQuizestart(true);
+    time.setMinutes(time.getMinutes() + 5);
+    restart(time);
+    setQuizestart(true);
   }
-  const resetTime = ()=>{
-      const time = new Date();
-      time.setMinutes(time.getMinutes() + 5);
-      restart(time);
-      setQuizestart(false);
+  const resetTime = () => {
+    const time = new Date();
+    time.setMinutes(time.getMinutes() + 5);
+    restart(time);
+    setQuizestart(false);
   }
 
 
   return (
     <div>
 
-     
 
-
-<div>
-      {!starts ? (
-        <div className='grid md:grid-cols-3 gap-4'>
-          {subjects.map((subj) => (
-            <div key={subj.id} className="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center mt-2">
-              <img src={subj.image} alt={subj.name} className="h-20 mb-4" />
-              <h2 className="text-xl font-semibold mb-2">{subj.name}</h2>
-              <p className="text-gray-600 mb-4">{subj.description}</p>
-              <div className="flex gap-8">
-                <button
-                  onClick={() => handleStart(subj.id)}
-                  className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-800 transition"
-                >
-                  Start Quiz
-                </button>
-                <select 
-                  className="border rounded h-8 p-1 border-gray-600" 
-                  onChange={(e) => handleLevelChange(e.target.value)}
-                >
-                  <option value="easy">Easy</option>
-                  <option value="medium">Medium</option>
-                  <option value="hard">Hard</option>
-                </select>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="flex justify-center items-center mt-6">
-
-          <div className="flex justify-between items-center mb-4">
-                <div>
-                  <h1 className="text-2xl font-bold">Science</h1>
-                  <p className="text-sm text-gray-500">Calculus Basics Quiz</p>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-lg flex items-center gap-1">
-                    <span><MdOutlineWatchLater /></span>
-                    <div>
-                      <span>{minutes}</span>:<span>{seconds < 10 ? `0${seconds}` : seconds}</span>
-                    </div>
-                  </div>
-                  <span className="flex items-center gap-1 text-yellow-500">
-                    💰 100
-                  </span>
-                </div>
-              </div>
-
-            <div className="mb-6 flex  justify-between w-full items-center">
-                <p className="font-medium mb-2 ">Question {currentIndex + 1} of {question.length}</p>
-                <div className="w-50 bg-gray-200 h-2 rounded-full">
-                  <div className="bg-blue-600 h-2 rounded-full " style={{ width: `${((currentIndex + 1) / question.length) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
-
-
-          <div className="bg-gray-50 shadow-2xl p-3 rounded max-w-lg w-full">
-            {!isFinished ? (
-              <>
-                <p className="font-medium text-xl mb-4">
-                  Q{currentIndex + 1}: {currentQ.question}
-                </p>
-                {currentQ.options.map((opt, ind) => (
-                  <button
-                    key={ind}
-                    onClick={() => dispatch(checkAnswer(opt))}
-                    className={`border p-2 rounded-full w-full font-semibold m-2 
-                      ${selectedOptions[currentIndex] === opt ? "bg-green-200" : "hover:bg-green-100"}`}
-                  >
-                    {opt}
-                  </button>
-                ))}
-                <div className="flex justify-between mt-4">
-                  <button 
-                    onClick={() => dispatch(preQuestion())} 
-                    disabled={currentIndex === 0} 
-                    className="px-4 py-2 bg-gray-300 rounded"
-                  >
-                    Previous
-                  </button>
-                  <button 
-                    onClick={() => dispatch(nextQuestion())} 
-                    className="px-4 py-2 bg-blue-600 text-white rounded"
-                  >
-                    Next
-                  </button>
-                </div>
-              </>
-            ) : (
-              <div className="text-center">
-                <h2 className="text-2xl font-bold mb-4">🎉 Quiz Completed! 🎉</h2>
-                <p className="text-lg mb-2">Your Score: {score} / {currentArray.length}</p>
-                <button 
-                  onClick={() => dispatch(resetquize())} 
-                  className="px-4 py-2 bg-blue-600 text-white rounded font-medium"
-                >
-                  Restart Quiz
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
 
 
       <div>
-        {/* 
-       {quizestart===false&& <div className='grid md:grid-cols-3 gap-4'>
-        {subjects.map((subj) => (
-          <div key={subj.id} className="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center mt-2">
-            <img src={subj.image} alt={subj.name} className="h-20 mb-4" />
-            <h2 className="text-xl font-semibold mb-2">{subj.name}</h2>
-            <p className="text-gray-600 mb-4">{subj.description}</p>
-          <div className="flex gap-8">
-              <button
-              onClick={() => handleStart(subj.id)}
-              className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-800 transition"
-            >
-              Start Quiz
-            </button>
-            <select className="border rounded h-8 p-1 border-gray-600" value={level} onChange={(e)=>setLevel(e.target.value)}>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
-          </div>
-        ))}
-      </div>
-
-       { quizestart===true&&<div>
-          <div>
-            {!isFinished ? <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-2xl mt-1">
-              <div className="flex justify-between items-center mb-4">
-                <div>
-                  <h1 className="text-2xl font-bold">Science</h1>
-                  <p className="text-sm text-gray-500">Calculus Basics Quiz</p>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-lg flex items-center gap-1">
-                    <span><MdOutlineWatchLater /></span>
-                    <div>
-                      <span>{minutes}</span>:<span>{seconds < 10 ? `0${seconds}` : seconds}</span>
-                    </div>
-                  </div>
-                  <span className="flex items-center gap-1 text-yellow-500">
-                    💰 100
-                  </span>
-                </div>
-              </div>
-
-
-              <div className="mb-6 flex  justify-between w-full items-center">
-                <p className="font-medium mb-2 ">Question {currentIndex + 1} of {question.length}</p>
-                <div className="w-50 bg-gray-200 h-2 rounded-full">
-                  <div className="bg-blue-600 h-2 rounded-full " style={{ width: `${((currentIndex + 1) / question.length) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
-
-
-              <h3 className="text-xl mb-2 font-medium">
-                Q{currentIndex + 1}: {currentQuestion.question}
-              </h3>
-              <div className="flex justify-center items-center mt-6">
-          <div className="bg-gray-50 shadow-2xl p-3 rounded max-w-lg w-full">
-            {!isFinished ? (
-              <>
-                <p className="font-medium text-xl mb-4">
-                  Q{currentIndex + 1}: {currentQ.question}
-                </p>
-                {currentQ.options.map((opt, ind) => (
+        {!starts ? (
+          <div className='grid md:grid-cols-3 gap-4'>
+            {subjects.map((subj) => (
+              <div key={subj.id} className="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center mt-2">
+                <img src={subj.image} alt={subj.name} className="h-20 mb-4" />
+                <h2 className="text-xl font-semibold mb-2">{subj.name}</h2>
+                <p className="text-gray-600 mb-4">{subj.description}</p>
+                <div className="flex gap-8">
                   <button
-                    key={ind}
-                    onClick={() => dispatch(checkAnswer(opt))}
-                    className={`border p-2 rounded-full w-full font-semibold m-2 
+                    onClick={() => handleStart(subj.id)}
+                    className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-800 transition"
+                  >
+                    Start Quiz
+                  </button>
+                  <select
+                    className="border rounded h-8 p-1 border-gray-600"
+                    onChange={(e) => handleLevelChange(e.target.value)}
+                  >
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                  </select>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex justify-center items-center mt-6">
+
+            <div className="flex justify-between items-center mb-4">
+              <div>
+                <h1 className="text-2xl font-bold">Science</h1>
+                <p className="text-sm text-gray-500">Calculus Basics Quiz</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="text-lg flex items-center gap-1">
+                  <span><MdOutlineWatchLater /></span>
+                  <div>
+                    <span>{minutes}</span>:<span>{seconds < 10 ? `0${seconds}` : seconds}</span>
+                  </div>
+                </div>
+                <span className="flex items-center gap-1 text-yellow-500">
+                  💰 100
+                </span>
+              </div>
+            </div>
+
+            <div className="mb-6 flex  justify-between w-full items-center">
+              <p className="font-medium mb-2 ">Question {currentIndex + 1} of {questionsData.length}</p>
+              <div className="w-50 bg-gray-200 h-2 rounded-full">
+                <div className="bg-blue-600 h-2 rounded-full " style={{ width: `${((currentIndex + 1) / questionsData.length) * 100}%` }}
+                ></div>
+              </div>
+            </div>
+
+
+            <div className="bg-gray-50 shadow-2xl p-3 rounded max-w-lg w-full">
+              {!isFinished ? (
+                <>
+                  <p className="font-medium text-xl mb-4">
+                    Q{currentIndex + 1}: {currentQ.question}
+                  </p>
+                  {currentQ.options.map((opt, ind) => (
+                    <button
+                      key={ind}
+                      onClick={() => dispatch(checkAnswer(opt))}
+                      className={`border p-2 rounded-full w-full font-semibold m-2 
                       ${selectedOptions[currentIndex] === opt ? "bg-green-200" : "hover:bg-green-100"}`}
+                    >
+                      {opt}
+                    </button>
+                  ))}
+                  <div className="flex justify-between mt-4">
+                    <button
+                      onClick={() => dispatch(preQuestion())}
+                      disabled={currentIndex === 0}
+                      className="px-4 py-2 bg-gray-300 rounded"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      onClick={() => dispatch(nextQuestion())}
+                      className="px-4 py-2 bg-blue-600 text-white rounded"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center">
+                  <h2 className="text-2xl font-bold mb-4">🎉 Quiz Completed! 🎉</h2>
+                  <p className="text-lg mb-2">Your Score: {score} / {currentArray.length}</p>
+                  <button
+                    onClick={() => dispatch(resetquize())}
+                    className="px-4 py-2 bg-blue-600 text-white rounded font-medium"
                   >
-                    {opt}
-                  </button>
-                ))}
-                <div className="flex justify-between mt-4">
-                  <button 
-                    onClick={() => dispatch(preQuestion())} 
-                    disabled={currentIndex === 0} 
-                    className="px-4 py-2 bg-gray-300 rounded"
-                  >
-                    Previous
-                  </button>
-                  <button 
-                    onClick={() => dispatch(nextQuestion())} 
-                    className="px-4 py-2 bg-blue-600 text-white rounded"
-                  >
-                    Next
+                    Restart Quiz
                   </button>
                 </div>
-              </>
-
-            </div> : <div className="text-center">
-                <h2 className="text-2xl font-bold mb-4">🎉 Quiz Completed! 🎉</h2>
-                <p className="text-lg mb-2">Your Score: {score} / {currentArray.length}</p>
-                <button 
-                  onClick={() => dispatch(resetquize())} 
-                  className="px-4 py-2 bg-blue-600 text-white rounded font-medium"
-                >
-                  Restart Quiz
-                </button>
-              </div>}
+              )}
+            </div>
           </div>
-        </div>} */}
-
+        )}
       </div>
     </div>
 
