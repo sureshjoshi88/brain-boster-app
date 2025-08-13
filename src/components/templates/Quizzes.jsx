@@ -124,7 +124,6 @@ const Quizzes = () => {
     expiryTimestamp: time,
     autoStart: false,
     onExpire: () => {
-      // dispatch(resetquize())
       dispatch(resetIsFinished())
 
     },
@@ -136,12 +135,12 @@ const Quizzes = () => {
     time.setMinutes(time.getMinutes() + 1);
     restart(time);
   }
-  const resetTime = () => {
-    const time = new Date();
-    time.setMinutes(time.getMinutes() + 1);
-    restart(time);
-    setQuizestart(false);
-  }
+  // const resetTime = () => {
+  //   const time = new Date();
+  //   time.setMinutes(time.getMinutes() + 1);
+  //   restart(time);
+  //   setQuizestart(false);
+  // }
 
   return (
 
@@ -248,7 +247,7 @@ const Quizzes = () => {
                       Restart Quiz
                     </button>
                     <button
-                      onClick={() =>setStarts(false)}
+                      onClick={() => setStarts(false)}
                       className="px-4 py-2 bg-blue-600 text-white rounded font-medium cursor-pointer"
                     >
                       Back to home
