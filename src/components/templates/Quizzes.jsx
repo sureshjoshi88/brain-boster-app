@@ -175,7 +175,7 @@ const Quizzes = () => {
 
 
 
-            <div className="bg-gray-50 shadow-2xl p-3 rounded max-w-lg w-full">
+            <div className="bg-gray-50 shadow-2xl p-5 rounded max-w-lg w-full">
               <div className="flex justify-between items-center mb-4">
                 <div>
                   <h1 className="text-2xl font-bold">Science</h1>
@@ -210,8 +210,8 @@ const Quizzes = () => {
                     <button
                       key={ind}
                       onClick={() => dispatch(checkAnswer(opt))}
-                      className={`border p-2 rounded-full w-full font-semibold m-2 
-                      ${selectedOptions[currentIndex] === opt ? "bg-green-500" : "hover:bg-green-100"}`}
+                      className={`border p-2 rounded-full w-full font-semibold my-2
+                      ${selectedOptions[currentIndex] === opt ? "bg-blue-500 text-white" : "hover:bg-blue-400 hover:text-white"}`}
                     >
                       {opt}
                     </button>
