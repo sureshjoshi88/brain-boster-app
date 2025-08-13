@@ -97,6 +97,7 @@ const Quizzes = () => {
   const handleStart = (selectedSubject) => {
     dispatch(setSubject(selectedSubject));
     setStarts(true);
+    start()
   };
 
   const handleLevelChange = (level) => {
@@ -110,7 +111,7 @@ const Quizzes = () => {
 
 
   const time = new Date();
-  time.setMinutes(time.getMinutes() + 5); // 5 minutes
+  time.setMinutes(time.getMinutes() + 1); // 5 minutes
   const {
     seconds,
     minutes,
@@ -122,19 +123,20 @@ const Quizzes = () => {
     onExpire: () => {
       // dispatch(resetquize())
       dispatch(resetIsFinished())
+      // setStarts(false)
     },
   });
 
 
   const startTime = () => {
     const time = new Date();
-    time.setMinutes(time.getMinutes() + 5);
+    time.setMinutes(time.getMinutes() + 1);
     restart(time);
     setQuizestart(true);
   }
   const resetTime = () => {
     const time = new Date();
-    time.setMinutes(time.getMinutes() + 5);
+    time.setMinutes(time.getMinutes() + 1);
     restart(time);
     setQuizestart(false);
   }
@@ -176,6 +178,8 @@ const Quizzes = () => {
 
 
             <div className="bg-gray-50 shadow-2xl p-5 rounded max-w-lg w-full">
+              {!isFinished ? (
+                <>
               <div className="flex justify-between items-center mb-4">
                 <div>
                   <h1 className="text-2xl font-bold">Science</h1>
@@ -201,8 +205,6 @@ const Quizzes = () => {
                   ></div>
                 </div>
               </div>
-              {!isFinished ? (
-                <>
                   <p className="font-medium text-xl mb-4">
                     Q{currentIndex + 1}: {currentQ.question}
                   </p>
@@ -237,7 +239,7 @@ const Quizzes = () => {
                   <h2 className="text-2xl font-bold mb-4">🎉 Quiz Completed! 🎉</h2>
                   <p className="text-lg mb-2">Your Score: {score} / {currentArray.length}</p>
                   <button
-                    onClick={() => dispatch(resetquize())}
+                    onClick={() =>{ dispatch(resetquize()),startTime()}}
                     className="px-4 py-2 bg-blue-600 text-white rounded font-medium"
                   >
                     Restart Quiz
