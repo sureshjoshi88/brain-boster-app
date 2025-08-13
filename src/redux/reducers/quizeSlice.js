@@ -65,7 +65,7 @@ const quizeSlice = createSlice({
       state.isFinished = false;
     },
     resetIsFinished: (state) => {
-      state.isFinished = false;
+      state.isFinished = true;
     }
   }
 });

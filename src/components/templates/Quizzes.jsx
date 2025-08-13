@@ -97,7 +97,10 @@ const Quizzes = () => {
   const handleStart = (selectedSubject) => {
     dispatch(setSubject(selectedSubject));
     setStarts(true);
-    start()
+
+    const newTime = new Date();
+    newTime.setMinutes(newTime.getMinutes() + 1);
+    restart(newTime);
   };
 
   const handleLevelChange = (level) => {
@@ -179,31 +182,31 @@ const Quizzes = () => {
             <div className="bg-gray-50 shadow-2xl p-5 rounded max-w-lg w-full">
               {!isFinished ? (
                 <>
-              <div className="flex justify-between items-center mb-4">
-                <div>
-                  <h1 className="text-2xl font-bold">Science</h1>
-                  <p className="text-sm text-gray-500">Calculus Basics Quiz</p>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-lg flex items-center gap-1">
-                    <span><MdOutlineWatchLater /></span>
+                  <div className="flex justify-between items-center mb-4">
                     <div>
-                      <span>{minutes}</span>:<span>{seconds < 10 ? `0${seconds}` : seconds}</span>
+                      <h1 className="text-2xl font-bold">Science</h1>
+                      <p className="text-sm text-gray-500">Calculus Basics Quiz</p>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="text-lg flex items-center gap-1">
+                        <span><MdOutlineWatchLater /></span>
+                        <div>
+                          <span>{minutes}</span>:<span>{seconds < 10 ? `0${seconds}` : seconds}</span>
+                        </div>
+                      </div>
+                      <span className="flex items-center gap-1 text-yellow-500">
+                        💰 100
+                      </span>
                     </div>
                   </div>
-                  <span className="flex items-center gap-1 text-yellow-500">
-                    💰 100
-                  </span>
-                </div>
-              </div>
 
-              <div className="mb-6 flex  justify-between w-full items-center">
-                <p className="font-medium mb-2 ">Question {currentIndex + 1} of {currentArray.length}</p>
-                <div className="w-50 bg-gray-200 h-2 rounded-full">
-                  <div className="bg-blue-600 h-2 rounded-full " style={{ width: `${((currentIndex + 1) / currentArray.length) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
+                  <div className="mb-6 flex  justify-between w-full items-center">
+                    <p className="font-medium mb-2 ">Question {currentIndex + 1} of {currentArray.length}</p>
+                    <div className="w-50 bg-gray-200 h-2 rounded-full">
+                      <div className="bg-blue-600 h-2 rounded-full " style={{ width: `${((currentIndex + 1) / currentArray.length) * 100}%` }}
+                      ></div>
+                    </div>
+                  </div>
                   <p className="font-medium text-xl mb-4">
                     Q{currentIndex + 1}: {currentQ.question}
                   </p>
@@ -237,20 +240,20 @@ const Quizzes = () => {
                 <div className="text-center">
                   <h2 className="text-2xl font-bold mb-4">🎉 Quiz Completed! 🎉</h2>
                   <p className="text-lg mb-2">Your Score: {score} / {currentArray.length}</p>
-                 <div className="flex justify-between ">
-                   <button
-                    onClick={() =>{ dispatch(resetquize()),startTime()}}
-                    className="px-4 py-2 bg-blue-600 text-white rounded font-medium cursor-pointer"
-                  >
-                    Restart Quiz
-                  </button>
-                  <button
-                    onClick={() =>{setStarts(false),resetTime()}}
-                    className="px-4 py-2 bg-blue-600 text-white rounded font-medium cursor-pointer"
-                  >
-                    Back to home
-                  </button>
-                 </div>
+                  <div className="flex justify-between ">
+                    <button
+                      onClick={() => { dispatch(resetquize()), startTime() }}
+                      className="px-4 py-2 bg-blue-600 text-white rounded font-medium cursor-pointer"
+                    >
+                      Restart Quiz
+                    </button>
+                    <button
+                      onClick={() =>setStarts(false)}
+                      className="px-4 py-2 bg-blue-600 text-white rounded font-medium cursor-pointer"
+                    >
+                      Back to home
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
