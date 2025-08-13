@@ -123,7 +123,7 @@ const Quizzes = () => {
     onExpire: () => {
       // dispatch(resetquize())
       dispatch(resetIsFinished())
-      // setStarts(false)
+
     },
   });
 
@@ -132,7 +132,6 @@ const Quizzes = () => {
     const time = new Date();
     time.setMinutes(time.getMinutes() + 1);
     restart(time);
-    setQuizestart(true);
   }
   const resetTime = () => {
     const time = new Date();
@@ -238,12 +237,20 @@ const Quizzes = () => {
                 <div className="text-center">
                   <h2 className="text-2xl font-bold mb-4">🎉 Quiz Completed! 🎉</h2>
                   <p className="text-lg mb-2">Your Score: {score} / {currentArray.length}</p>
-                  <button
+                 <div className="flex justify-between ">
+                   <button
                     onClick={() =>{ dispatch(resetquize()),startTime()}}
-                    className="px-4 py-2 bg-blue-600 text-white rounded font-medium"
+                    className="px-4 py-2 bg-blue-600 text-white rounded font-medium cursor-pointer"
                   >
                     Restart Quiz
                   </button>
+                  <button
+                    onClick={() =>{setStarts(false),resetTime()}}
+                    className="px-4 py-2 bg-blue-600 text-white rounded font-medium cursor-pointer"
+                  >
+                    Back to home
+                  </button>
+                 </div>
                 </div>
               )}
             </div>
