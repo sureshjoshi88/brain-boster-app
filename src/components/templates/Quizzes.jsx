@@ -92,16 +92,15 @@ const Quizzes = () => {
   
 
   const handleStart = (selectedSubject) => {
-    if(selectedSubject===currentSubject){
+    if(questionsData[selectedSubject]){
       dispatch(setSubject(selectedSubject));
       setStarts(true);
+      const newTime = new Date();
+      newTime.setMinutes(newTime.getMinutes() + 1);
+      restart(newTime);
     }else{
       alert("the subject quize not presnt")
     }
-
-    const newTime = new Date();
-    newTime.setMinutes(newTime.getMinutes() + 1);
-    restart(newTime);
   };
 
   const handleLevelChange = (level) => {
