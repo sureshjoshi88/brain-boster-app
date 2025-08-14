@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
 import { IoBookOutline } from "react-icons/io5";
@@ -17,11 +17,23 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
 
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const isAuthenticated = localStorage.getItem("currentUser");
-  const user = JSON.parse(isAuthenticated)
+
+  const signUpUser = ()=>{
+    navigate('/register')
+  }
+  const loginUser = ()=>{
+    navigate('/login')
+  }
+
+
+  useEffect(()=>{
+    const isAuthenticated = localStorage.getItem("currentUser");
+    const user = JSON.parse(isAuthenticated)
+  },[signUpUser,loginUser])
   return (
     <>
       <nav className="bg-white w-full  shadow-md px-4 py-3">
@@ -140,8 +152,8 @@ const Navbar = () => {
             {isOpen1 && <div>
               <div className="absolute top-full shadow-xl right-0 mt-2 bg-white   rounded  flex flex-col gap-2 z-50">
                 {!isAuthenticated ? <div className="w-30 mt-2">
-                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded w-full">Sign Up</button>
-                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded w-full mt-1">Logn In</button>
+                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded w-full" onClick={signUpUser}>Sign Up</button>
+                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded w-full mt-1" onClick={loginUser}>Logn In</button>
                 </div>
                   : <button
                     onClick={() => dispatch(logout(), navigate('/'))}
