@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
 import { IoBookOutline } from "react-icons/io5";
@@ -30,10 +30,10 @@ const Navbar = () => {
   }
 
 
-  useEffect(()=>{
+ 
     const isAuthenticated = localStorage.getItem("currentUser");
     const user = JSON.parse(isAuthenticated)
-  },[signUpUser,loginUser])
+  
   return (
     <>
       <nav className="bg-white w-full  shadow-md px-4 py-3">
