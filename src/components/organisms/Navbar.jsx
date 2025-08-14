@@ -29,8 +29,6 @@ const Navbar = () => {
     navigate('/login')
   }
 
-
- 
     const isAuthenticated = localStorage.getItem("currentUser");
     const user = JSON.parse(isAuthenticated)
   
