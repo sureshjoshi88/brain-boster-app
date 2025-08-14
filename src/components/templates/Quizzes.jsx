@@ -18,62 +18,62 @@ import {
 
 const Quizzes = () => {
 
-  // const subjects = [
-  //   {
-  //     id: "javascript",
-  //     name: "JavaScript",
-  //     image: "https://cdn.worldvectorlogo.com/logos/javascript-1.svg",
-  //     description: "Test your JavaScript knowledge!",
-  //   },
-  //   {
-  //     id: "html",
-  //     name: "HTML",
-  //     image: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
-  //     description: "Explore your HTML skills!",
-  //   },
-  //   {
-  //     id: "react",
-  //     name: "React",
-  //     image: "https://cdn.worldvectorlogo.com/logos/react-2.svg",
-  //     description: "Master your React fundamentals!",
-  //   },
-  //   {
-  //     id: "css",
-  //     name: "CSS",
-  //     image: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
-  //     description: "Style your knowledge with CSS!",
-  //   },
-  //   {
-  //     id: "nodejs",
-  //     name: "Node.js",
-  //     image: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
-  //     description: "Check your backend basics with Node.js!",
-  //   },
-  //   {
-  //     id: "mongodb",
-  //     name: "MongoDB",
-  //     image: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
-  //     description: "Explore your NoSQL skills with MongoDB!",
-  //   },
-  //   {
-  //     id: "expressjs",
-  //     name: "Express.js",
-  //     image: "https://cdn.worldvectorlogo.com/logos/express-109.svg",
-  //     description: "How well do you know Express.js?",
-  //   },
-  //   {
-  //     id: "typescript",
-  //     name: "TypeScript",
-  //     image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
-  //     description: "Put your TypeScript typing to the test!",
-  //   },
-  //   {
-  //     id: "github",
-  //     name: "GitHub",
-  //     image: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
-  //     description: "Version control mastery starts here!",
-  //   },
-  // ];
+  const subjects = [
+    {
+      id: "javascript",
+      name: "JavaScript",
+      image: "https://cdn.worldvectorlogo.com/logos/javascript-1.svg",
+      description: "Test your JavaScript knowledge!",
+    },
+    {
+      id: "html",
+      name: "HTML",
+      image: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
+      description: "Explore your HTML skills!",
+    },
+    {
+      id: "react",
+      name: "React",
+      image: "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+      description: "Master your React fundamentals!",
+    },
+    {
+      id: "css",
+      name: "CSS",
+      image: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
+      description: "Style your knowledge with CSS!",
+    },
+    {
+      id: "nodejs",
+      name: "Node.js",
+      image: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+      description: "Check your backend basics with Node.js!",
+    },
+    {
+      id: "mongodb",
+      name: "MongoDB",
+      image: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+      description: "Explore your NoSQL skills with MongoDB!",
+    },
+    {
+      id: "expressjs",
+      name: "Express.js",
+      image: "https://cdn.worldvectorlogo.com/logos/express-109.svg",
+      description: "How well do you know Express.js?",
+    },
+    {
+      id: "typescript",
+      name: "TypeScript",
+      image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+      description: "Put your TypeScript typing to the test!",
+    },
+    {
+      id: "github",
+      name: "GitHub",
+      image: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
+      description: "Version control mastery starts here!",
+    },
+  ];
 
   const dispatch = useDispatch();
 
@@ -89,14 +89,15 @@ const Quizzes = () => {
 
   const [starts, setStarts] = useState(false);
 
-  const subjects = [
-    { id: "javascript", name: "JavaScript", image: "https://cdn.worldvectorlogo.com/logos/javascript-1.svg", description: "Test your JavaScript knowledge!" },
-    { id: "html", name: "HTML", image: "https://cdn.worldvectorlogo.com/logos/html-1.svg", description: "Explore your HTML skills!" },
-  ];
+  
 
   const handleStart = (selectedSubject) => {
-    dispatch(setSubject(selectedSubject));
-    setStarts(true);
+    if(selectedSubject===currentSubject){
+      dispatch(setSubject(selectedSubject));
+      setStarts(true);
+    }else{
+      alert("the subject quize not presnt")
+    }
 
     const newTime = new Date();
     newTime.setMinutes(newTime.getMinutes() + 1);
