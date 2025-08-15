@@ -11,6 +11,7 @@ import MyProgress from "./data/MyProgress";
 import Register from "./components/templates/Register";
 import Quizzes from "./components/templates/Quizzes";
 import LeaderBoardPage from "./components/templates/LeaderBoardPage";
+import Footer from "./components/organisms/Footer";
 
 const Navbar = lazy(() => import("./components/organisms/Navbar"));
 const NotFound = lazy(() => import("./components/templates/NotFound"));
@@ -63,6 +64,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/" element={<Footer/>}/>
           </Route>
 
           {/* Open Routes */}

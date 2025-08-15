@@ -157,7 +157,7 @@ const Quizzes = () => {
                 <div className="flex gap-8">
                   <button
                     onClick={() => handleStart(subj.id)}
-                    className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-800 transition"
+                    className="bg-blue-600 cursor-pointer text-white px-4 py-1 rounded hover:bg-blue-800 transition"
                   >
                     Start Quiz
                   </button>
