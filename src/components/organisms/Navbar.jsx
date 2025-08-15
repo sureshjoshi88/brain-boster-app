@@ -1,5 +1,5 @@
 import  { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
 import { IoBookOutline } from "react-icons/io5";
 import { PiGraduationCap } from "react-icons/pi";
@@ -255,7 +255,6 @@ const Navbar = () => {
         )}
       </nav>
 
-      <Outlet />
     </>
   );
 };

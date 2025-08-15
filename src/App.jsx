@@ -11,8 +11,7 @@ import MyProgress from "./data/MyProgress";
 import Register from "./components/templates/Register";
 import Quizzes from "./components/templates/Quizzes";
 import LeaderBoardPage from "./components/templates/LeaderBoardPage";
-import { Layout } from "lucide-react";
-
+import Layout from "./components/templates/Layout";
 const NotFound = lazy(() => import("./components/templates/NotFound"));
 const Home = lazy(() => import("./components/templates/Home"));
 
@@ -31,12 +30,11 @@ function App() {
           </div>
         }
       >
-
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/progress" element={<MyProgress />} />
             <Route path='/quizze' element={<Quizzes />} />
-            <Route path="/" element={<Home />} />
+            <Route index  element={<Home />} />
             {/* Protected Routes */}
             <Route
               path="/subjects"

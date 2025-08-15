@@ -7,7 +7,6 @@ import TopformersCard from "../molecules/dashBoard/TopformersCard";
 import PopularSubjects from "../molecules/dashBoard/PopularSubjects";
 import LatestfromBlog from "../molecules/dashBoard/LatestfromBlog";
 import MiniFooter from "../organisms/Minifooter";
-import Footer from "../organisms/Footer";
 
 function Home() {
     return (
@@ -91,7 +90,6 @@ function Home() {
                 </div>
                 <div>
                     <MiniFooter />
-                    <Footer />
                 </div>
 
 
