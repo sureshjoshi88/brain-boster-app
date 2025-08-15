@@ -11,9 +11,8 @@ import MyProgress from "./data/MyProgress";
 import Register from "./components/templates/Register";
 import Quizzes from "./components/templates/Quizzes";
 import LeaderBoardPage from "./components/templates/LeaderBoardPage";
-import Footer from "./components/organisms/Footer";
+import { Layout } from "lucide-react";
 
-const Navbar = lazy(() => import("./components/organisms/Navbar"));
 const NotFound = lazy(() => import("./components/templates/NotFound"));
 const Home = lazy(() => import("./components/templates/Home"));
 
@@ -34,7 +33,7 @@ function App() {
       >
 
         <Routes>
-          <Route path="/" element={<Navbar />}>
+          <Route path="/" element={<Layout/>}>
             <Route path="/progress" element={<MyProgress />} />
             <Route path='/quizze' element={<Quizzes />} />
             <Route path="/" element={<Home />} />
@@ -64,7 +63,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route path="/" element={<Footer/>}/>
           </Route>
 
           {/* Open Routes */}
