@@ -22,12 +22,12 @@ function App() {
       <Suspense
         fallback={
           <div className="flex justify-center items-center h-screen fw-bold">
-<div>
+            <div>
               <h1>
-              <BeatLoader />
-            </h1>
-            <p className="text-lg font-semibold">Loading...</p>
-</div>
+                <BeatLoader />
+              </h1>
+              <p className="text-lg font-semibold">Loading...</p>
+            </div>
           </div>
         }
       >
