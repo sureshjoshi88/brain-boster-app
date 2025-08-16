@@ -148,18 +148,18 @@ const Navbar = () => {
               </div>
             </div>
             {isOpen1 && <div>
-              <div className="absolute top-full shadow-xl right-0 mt-2 bg-white   rounded  flex flex-col gap-2 z-50">
-                {!isAuthenticated ? <div className="w-30 mt-2">
-                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded w-full" onClick={signUpUser}>Sign Up</button>
-                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded w-full mt-1" onClick={loginUser}>Logn In</button>
+              <div className="absolute top-full shadow-xl right-0 mt-2 bg-gray-50 p-2   rounded  flex flex-col gap-2 z-50">
+                {!isAuthenticated ? <div className="w-30 mt-2 ">
+                  <button className="bg-gray-100 hover:bg-gray-200 hover:border-b-2 hover:border-b-blue-500 px-4 py-1 rounded w-full cursor-pointer" onClick={signUpUser}>Sign Up</button>
+                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded w-full mt-1 cursor-pointer hover:border-b-2 hover:border-b-blue-500 " onClick={loginUser}>Logn In</button>
                 </div>
                   : <button
                     onClick={() => dispatch(logout(), navigate('/'))}
-                    className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded"
+                    className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded cursor-pointer hover:border-b-2 hover:border-b-blue-500"
                   >
                     Logout
                   </button>}
-                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded">Profile</button>
+                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded cursor-pointer hover:border-b-2 hover:border-b-blue-500 ">Profile</button>
               </div>
             </div>}
           </div>
