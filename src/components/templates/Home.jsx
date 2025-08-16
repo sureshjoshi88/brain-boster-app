@@ -89,7 +89,7 @@ function Home() {
                     </div>
                 </div>
                 <div>
-                    <MiniFooter />
+                    <MiniFooter/>
                 </div>
 
 

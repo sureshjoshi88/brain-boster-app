@@ -89,16 +89,16 @@ const Quizzes = () => {
 
   const [starts, setStarts] = useState(false);
 
-  
+
 
   const handleStart = (selectedSubject) => {
-    if(questionsData[selectedSubject]){
+    if (questionsData[selectedSubject]) {
       dispatch(setSubject(selectedSubject));
       setStarts(true);
       const newTime = new Date();
       newTime.setMinutes(newTime.getMinutes() + 1);
       restart(newTime);
-    }else{
+    } else {
       alert("the subject quize not presnt")
     }
   };
