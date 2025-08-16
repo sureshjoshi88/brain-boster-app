@@ -159,6 +159,7 @@ const Navbar = () => {
                   >
                     Logout
                   </button>}
+                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded">Profile</button>
               </div>
             </div>}
           </div>
@@ -248,8 +249,20 @@ const Navbar = () => {
                   alt="userIcon"
                   className="w-7 h-7 rounded-full "
                 />
-                <p>User</p>
+                <p>{user?.name || "Guest"}</p>
               </div>
+            </div>
+            <div>
+                {!isAuthenticated ? <div className="w-30 mt-2">
+                  <button className="bg-blue-500 text-white font-semibold hover:bg-blue-600 px-4 py-1 rounded w-full" onClick={signUpUser}>Sign Up</button>
+                  <button className="bg-blue-500 text-white font-semibold hover:bg-blue-600 px-4 py-1 rounded w-full mt-1" onClick={loginUser}>Logn In</button>
+                </div>
+                  : <button
+                    onClick={() => dispatch(logout(), navigate('/'))}
+                    className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded"
+                  >
+                    Logout
+                  </button>}
             </div>
           </div>
         )}
