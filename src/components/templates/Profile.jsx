@@ -11,7 +11,8 @@ const Profile = () => {
     if (savedImg) {
       setUser(savedImg);
     }
-  }, []);  const handleimg = (e)=>{
+  }, []); 
+    const handleimg = (e)=>{
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();

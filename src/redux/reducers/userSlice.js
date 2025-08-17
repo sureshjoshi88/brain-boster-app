@@ -50,20 +50,10 @@ const userSlice=createSlice({
         allUsers:JSON.parse(localStorage.getItem('allUsers'))||[]
     },
     reducers:{
-        // signup:(state,action)=>{
-        //     state.currentUser=action.payload
-        //     localStorage.setItem("currentUser", JSON.stringify(state.currentUser));
-        //     state.allUsers.push(action.payload)
-        //     localStorage.setItem("allUsers", JSON.stringify(state.allUsers));
-
-        // },
-        // login:(state,action)=>{
-        //     state.currentUser=action.payload
-        //     localStorage.setItem("currentUser", JSON.stringify(state.currentUser));
-        // },
         logout:(state)=>{
             state.currentUser='';
             localStorage.removeItem('currentUser');
+            localStorage.removeItem("user_img")
 
         }
     },

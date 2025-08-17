@@ -8,7 +8,6 @@ import { FaBlog } from "react-icons/fa";
 import { VscGraph } from "react-icons/vsc";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaCoins } from "react-icons/fa6";
-import User from "../../assets/favicon.png";
 import { logout } from "../../redux/reducers/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +15,15 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
+
+  const [users,setUsers] = useState("https://cdn-icons-png.flaticon.com/512/149/149071.png")
+   useEffect(() => {
+      const savedImg = localStorage.getItem("user_img");
+      if (savedImg) {
+        setUsers(savedImg);
+      }
+    }, [logout]); 
+  
 
 
   const dispatch = useDispatch()
@@ -139,7 +147,7 @@ const Navbar = () => {
               </div>
               <div className="flex items-center gap-1">
                 <img onClick={() => setIsOpen1(!isOpen1)}
-                  src={User}
+                  src={users}
                   alt="userIcon"
                   className="w-7 h-7 rounded-full cursor-pointer"
                 />
