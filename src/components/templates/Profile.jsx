@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdPhotoLibrary } from "react-icons/md";
 import { MdPhotoCamera } from "react-icons/md";
 
@@ -6,11 +6,21 @@ import { MdPhotoCamera } from "react-icons/md";
 
 const Profile = () => {
   const [user,setUser] = useState("https://cdn-icons-png.flaticon.com/512/149/149071.png")
-  const handleimg = (e)=>{
+  useEffect(() => {
+    const savedImg = localStorage.getItem("user_img");
+    if (savedImg) {
+      setUser(savedImg);
+    }
+  }, []);  const handleimg = (e)=>{
     const file = e.target.files[0];
-    if(file){
-      const imgurl = URL.createObjectURL(file)
-      setUser(imgurl)
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64data = reader.result; // base64 string
+        setUser(base64data);
+        localStorage.setItem("user_img", base64data);
+      };
+      reader.readAsDataURL(file); // file → base64
     }
   }
   return (
