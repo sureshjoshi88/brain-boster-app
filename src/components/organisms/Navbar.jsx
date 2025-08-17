@@ -159,7 +159,7 @@ const Navbar = () => {
                   >
                     Logout
                   </button>}
-                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded cursor-pointer hover:border-b-2 hover:border-b-blue-500 ">Profile</button>
+                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded cursor-pointer hover:border-b-2 hover:border-b-blue-500 " onClick={()=>navigate('/profile')}>Profile</button>
               </div>
             </div>}
           </div>

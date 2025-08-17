@@ -12,6 +12,7 @@ import Register from "./components/templates/Register";
 import Quizzes from "./components/templates/Quizzes";
 import LeaderBoardPage from "./components/templates/LeaderBoardPage";
 import Layout from "./components/templates/Layout";
+import Profile from "./components/templates/Profile";
 const NotFound = lazy(() => import("./components/templates/NotFound"));
 const Home = lazy(() => import("./components/templates/Home"));
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/" element={<Layout/>}>
             <Route path="/progress" element={<MyProgress />} />
             <Route path='/quizze' element={<Quizzes />} />
+            <Route path='/profile' element={<Profile />} />
             <Route index  element={<Home />} />
             {/* Protected Routes */}
             <Route
