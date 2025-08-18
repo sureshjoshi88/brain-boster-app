@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
 import { IoBookOutline } from "react-icons/io5";
@@ -16,30 +16,30 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
 
-  const [users,setUsers] = useState("https://cdn-icons-png.flaticon.com/512/149/149071.png")
-   useEffect(() => {
-      const savedImg = localStorage.getItem("user_img");
-      if (savedImg) {
-        setUsers(savedImg);
-      }
-    }, [logout]); 
-  
+  const [users, setUsers] = useState("https://cdn-icons-png.flaticon.com/512/149/149071.png")
+  useEffect(() => {
+    const savedImg = localStorage.getItem("user_img");
+    if (savedImg) {
+      setUsers(savedImg);
+    }
+  }, [logout]);
+
 
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
 
-  const signUpUser = ()=>{
+  const signUpUser = () => {
     navigate('/register')
   }
-  const loginUser = ()=>{
+  const loginUser = () => {
     navigate('/login')
   }
 
-    const isAuthenticated = localStorage.getItem("currentUser");
-    const user = JSON.parse(isAuthenticated)
-  
+  const isAuthenticated = localStorage.getItem("currentUser");
+  const user = JSON.parse(isAuthenticated)
+
   return (
     <>
       <nav className="bg-white w-full  shadow-md px-4 py-3">
@@ -167,7 +167,7 @@ const Navbar = () => {
                   >
                     Logout
                   </button>}
-                  <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded cursor-pointer hover:border-b-2 hover:border-b-blue-500 " onClick={()=>navigate('/profile')}>Profile</button>
+                <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded cursor-pointer hover:border-b-2 hover:border-b-blue-500 " onClick={() => navigate('/profile')}>Profile</button>
               </div>
             </div>}
           </div>
@@ -261,16 +261,16 @@ const Navbar = () => {
               </div>
             </div>
             <div>
-                {!isAuthenticated ? <div className="w-30 mt-2">
-                  <button className="bg-blue-500 text-white font-semibold hover:bg-blue-600 px-4 py-1 rounded w-full" onClick={signUpUser}>Sign Up</button>
-                  <button className="bg-blue-500 text-white font-semibold hover:bg-blue-600 px-4 py-1 rounded w-full mt-1" onClick={loginUser}>Logn In</button>
-                </div>
-                  : <button
-                    onClick={() => dispatch(logout(), navigate('/'))}
-                    className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded"
-                  >
-                    Logout
-                  </button>}
+              {!isAuthenticated ? <div className="w-30 mt-2">
+                <button className="bg-blue-500 text-white font-semibold hover:bg-blue-600 px-4 py-1 rounded w-full" onClick={signUpUser}>Sign Up</button>
+                <button className="bg-blue-500 text-white font-semibold hover:bg-blue-600 px-4 py-1 rounded w-full mt-1" onClick={loginUser}>Logn In</button>
+              </div>
+                : <button
+                  onClick={() => dispatch(logout(), navigate('/'))}
+                  className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded"
+                >
+                  Logout
+                </button>}
             </div>
           </div>
         )}
