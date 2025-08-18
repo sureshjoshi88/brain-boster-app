@@ -24,6 +24,9 @@ const Profile = () => {
       reader.readAsDataURL(file); // file → base64
     }
   }
+
+  const profile = JSON.parse(localStorage.getItem("currentUser"))
+
   return (
     <div className='flex justify-center items-center h-100'>
 
@@ -50,9 +53,9 @@ const Profile = () => {
 
     </div>
     <div>
-      <p className='font-medium text-xl'>Name</p>
-      <p className='font-medium text-xl'> Email</p>
-      <p className='font-medium text-xl'>Password</p>
+      <p className='font-medium text-xl mt-2'>Name :- {profile.name}</p>
+      <p className='font-medium text-xl mt-2'> Email :- {profile.email}</p>
+      <p className='font-medium text-xl mt-2'>Password :- {profile.password}</p>
     </div>
    </div>
       
