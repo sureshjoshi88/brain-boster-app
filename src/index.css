@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+/* custom css */
+
+.hidden-icons{
+    display: none;
+}
+
+.add-icons:hover .hidden-icons{
+    display: block;
+}
