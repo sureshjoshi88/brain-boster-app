@@ -44,20 +44,20 @@ const Profile = () => {
             onChange={handleimg}
             className="hidden"
           />
-        <div className='add-icons'>
+          <div className='add-icons'>
             <p className='rounded-full text-3xl absolute bottom-5 right-10 bg-white shadow-xl cursor-pointer '><IoAddCircle /></p>
-         <div className='hidden-icons'>
-           <label htmlFor="img" className='rounded-full text-2xl absolute -bottom-4 right-1 bg-white shadow-xl cursor-pointer hover:bg-gray-100 p-2'>
-            <MdPhotoLibrary />
-          </label>
-          <label
-            htmlFor="cameraInput"
-            className="absolute -bottom-4 right-11 text-2xl bg-white p-2 rounded-full shadow-xl cursor-pointer hover:bg-gray-100"
-          >
-            <MdPhotoCamera className="text-xl text-gray-700" />
-          </label>
-         </div>
-        </div>
+            <div className='hidden-icons'>
+              <label htmlFor="img" className='rounded-full text-2xl absolute -bottom-4 right-1 bg-white shadow-xl cursor-pointer hover:bg-gray-100 p-2'>
+                <MdPhotoLibrary />
+              </label>
+              <label
+                htmlFor="cameraInput"
+                className="absolute -bottom-4 right-11 text-2xl bg-white p-2 rounded-full shadow-xl cursor-pointer hover:bg-gray-100"
+              >
+                <MdPhotoCamera className="text-xl text-gray-700" />
+              </label>
+            </div>
+          </div>
 
         </div>
         <div className='mt-5'>
