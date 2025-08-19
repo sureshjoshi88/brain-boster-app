@@ -44,21 +44,23 @@ const Profile = () => {
             onChange={handleimg}
             className="hidden"
           />
-          <p className='rounded-full text-3xl absolute bottom-10 right-4 bg-white shadow-xl cursor-pointer add-icons'><IoAddCircle /></p>
+        <div className='add-icons'>
+            <p className='rounded-full text-3xl absolute bottom-5 right-10 bg-white shadow-xl cursor-pointer '><IoAddCircle /></p>
          <div className='hidden-icons'>
-           <label htmlFor="img" className='rounded-full text-2xl absolute bottom-0 right-1 bg-white shadow-xl cursor-pointer hover:bg-gray-100 p-2'>
+           <label htmlFor="img" className='rounded-full text-2xl absolute -bottom-4 right-1 bg-white shadow-xl cursor-pointer hover:bg-gray-100 p-2'>
             <MdPhotoLibrary />
           </label>
           <label
             htmlFor="cameraInput"
-            className="absolute bottom-0 right-11 text-2xl bg-white p-2 rounded-full shadow-xl cursor-pointer hover:bg-gray-100"
+            className="absolute -bottom-4 right-11 text-2xl bg-white p-2 rounded-full shadow-xl cursor-pointer hover:bg-gray-100"
           >
             <MdPhotoCamera className="text-xl text-gray-700" />
           </label>
          </div>
+        </div>
 
         </div>
-        <div>
+        <div className='mt-5'>
           <p className='font-medium text-xl mt-2'>Name :- {profile.name}</p>
           <p className='font-medium text-xl mt-2'> Email :- {profile.email}</p>
           <p className='font-medium text-xl mt-2'>Password :- {profile.password}</p>

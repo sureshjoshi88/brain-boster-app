@@ -7,5 +7,5 @@
 }
 
 .add-icons:hover .hidden-icons{
-    display: block;
+    display: block !important;
 }
