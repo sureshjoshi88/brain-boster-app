@@ -145,7 +145,13 @@ const Quizzes = () => {
   return (
 
     <div>
-
+<div>
+  <div>
+    <button>Live Quize</button>
+    <button>Scedual Quize</button>
+    <button>History</button>
+    </div>
+</div>
       <div>
         {!starts ? (
           <div className='grid md:grid-cols-3 gap-4'>
