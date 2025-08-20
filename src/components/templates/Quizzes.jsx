@@ -147,9 +147,9 @@ const Quizzes = () => {
     <div>
 <div className="flex justify-end">
   <div className="flex gap-6 p-2 mt-5 ">
-    <button>Live Quize</button>
-    <button>Scedual Quize</button>
-    <button>History</button>
+    <button className="bg-blue-500 text-white p-2 rounded shadow-2xl shadow-gray-500">Live Quize</button>
+    <button className="bg-blue-500 text-white p-2 rounded shadow-2xl  shadow-gray-500">Scedual Quize</button>
+    <button className="bg-blue-500 text-white p-2 rounded shadow-2xl  shadow-gray-500">History</button>
     </div>
 </div>
       <div>
