@@ -13,7 +13,9 @@ const quizeSlice = createSlice({
     currentIndex: 0,
     score: 0,
     selectedOptions: {},
-    isFinished: false
+    isFinished: false,
+    completedQuizzes: []   
+
   },
   reducers: {
     setSubject: (state, action) => {
@@ -66,7 +68,19 @@ const quizeSlice = createSlice({
     },
     resetIsFinished: (state) => {
       state.isFinished = true;
-    }
+    },
+    addToHistory: (state) => {
+  const currentArray = state.questionsData[state.currentSubject][state.currentDifficulty];
+
+  state.completedQuizzes.push({
+    id: Date.now(),
+    subject: state.currentSubject,
+    difficulty: state.currentDifficulty,
+    score: state.score,
+    total: currentArray.length,
+    date: new Date().toLocaleString()
+  });
+}
   }
 });
 
@@ -77,7 +91,8 @@ export const {
   preQuestion,
   checkAnswer,
   resetquize,
-  resetIsFinished
+  resetIsFinished,
+  addToHistory
 } = quizeSlice.actions;
 
 export default quizeSlice.reducer;

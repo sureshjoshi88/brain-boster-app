@@ -9,7 +9,8 @@ import {
   checkAnswer,
   resetIsFinished,
   setSubject,
-  setDifficulty
+  setDifficulty,
+  addToHistory
 } from "../../redux/reducers/quizeSlice";
 
 
@@ -258,6 +259,8 @@ const Quizzes = () => {
                     >
                       Back to home
                     </button>
+                        {dispatch(addToHistory())}
+
                   </div>
                 </div>
               )}
