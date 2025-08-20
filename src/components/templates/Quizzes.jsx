@@ -145,8 +145,8 @@ const Quizzes = () => {
   return (
 
     <div>
-<div>
-  <div>
+<div className="flex justify-end">
+  <div className="flex gap-6 p-2 mt-5 ">
     <button>Live Quize</button>
     <button>Scedual Quize</button>
     <button>History</button>
