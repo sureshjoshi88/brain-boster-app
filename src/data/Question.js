@@ -96,6 +96,7 @@ const questions = {
         answer: "Using closure",
       },
     ],
+    type:"live"
   },
 
   react: {
@@ -190,6 +191,7 @@ const questions = {
         answer: "Lazy loading components",
       },
     ],
+    type:"live"
   },
    css: {
     easy: [
@@ -278,6 +280,7 @@ const questions = {
         answer: "var()",
       },
     ],
+    type:"scheduled"
   },
    nodejs: {
     easy: [
@@ -371,6 +374,7 @@ const questions = {
         answer: "npm install -g <package>",
       },
     ],
+    type:"live"
   },
   mongodb: {
     easy: [
@@ -459,6 +463,7 @@ const questions = {
         answer: "createIndex()",
       },
     ],
+    type:"scheduled"
   },
  expressjs: {
     easy: [
@@ -552,6 +557,7 @@ const questions = {
         answer: "res.redirect()",
       },
     ],
+    type:"live"
   },
    typescript: {
     easy: [
@@ -655,6 +661,7 @@ const questions = {
         answer: "// @ts-ignore",
       },
     ],
+    type:"scheduled"
   },
    github: {
     easy: [
@@ -803,6 +810,7 @@ const questions = {
         answer: "git stash",
       },
     ],
+    type:"live"
   },
 
 };
