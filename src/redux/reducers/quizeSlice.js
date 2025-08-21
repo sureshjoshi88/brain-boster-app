@@ -71,7 +71,8 @@ const quizeSlice = createSlice({
     },
     addToHistory: (state) => {
   const currentArray = state.questionsData[state.currentSubject][state.currentDifficulty];
-
+const alreadyaded = state.completedQuizzes.some((quize)=>quize.subject===state.currentSubject && quize.difficulty===state.currentDifficulty)
+if(!alreadyaded){
   state.completedQuizzes.push({
     id: Date.now(),
     subject: state.currentSubject,
@@ -80,6 +81,10 @@ const quizeSlice = createSlice({
     total: currentArray.length,
     date: new Date().toLocaleString()
   });
+  alert('the subject quize is succesfull added');
+}else{
+      alert("This subject & difficulty is already added!");
+}
 }
   }
 });

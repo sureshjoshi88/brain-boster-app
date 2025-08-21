@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from "react-redux"
+import { useDispatch ,useSelector} from "react-redux"
+
 
 
 const QuizeResult = (props) => {
 
     const dispatch = useDispatch();
+    const history = useSelector(state=>state.quize.completedQuizzes);
 
+console.log(history);
     
 
 
 const handleSave = () =>{
-    if(props.score!==null){
-     dispatch(props.addToHistory());
-     alert("successfull save to history");
-    }
+     dispatch(props.addToHistory()); 
 }
   
     return (
