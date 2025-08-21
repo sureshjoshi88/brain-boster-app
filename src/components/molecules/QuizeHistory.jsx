@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 const QuizeHistory = () => {
-  const history = useSelector((state) => state.quize.history);
+  const history = useSelector((state) => state.quize.completedQuizzes);
 
   if (history.length === 0) {
     return (

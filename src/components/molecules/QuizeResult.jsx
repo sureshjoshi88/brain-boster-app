@@ -7,9 +7,14 @@ const QuizeResult = (props) => {
     const dispatch = useDispatch();
 
     
-  useEffect(() => {
-    dispatch(props.addToHistory());
-  }, []);
+
+
+const handleSave = () =>{
+    if(props.score!==null){
+     dispatch(props.addToHistory());
+     alert("successfull save to history");
+    }
+}
   
     return (
         <div>
@@ -29,7 +34,12 @@ const QuizeResult = (props) => {
                     >
                         Back to home
                     </button>
-
+                    <button
+                        onClick={handleSave}
+                        className="px-4 py-2 bg-blue-600 text-white rounded font-medium cursor-pointer"
+                    >
+                        Save to history
+                    </button>
                 </div>
             </div>
         </div>
