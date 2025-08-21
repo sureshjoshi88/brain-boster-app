@@ -811,7 +811,120 @@ const questions = {
     ],
     type:"live"
   },
-
+   html: {
+    easy: [
+      {
+        question: "HTML ka full form kya hai?",
+        options: [
+          "Hyperlinks and Text Markup Language",
+          "Home Tool Markup Language",
+          "HyperText Markup Language",
+          "HighText Markdown Language",
+        ],
+        answer: "HyperText Markup Language",
+      },
+      {
+        question: "Hyperlink banane ke liye kaun sa tag use hota hai?",
+        options: ["<link>", "<a>", "<href>", "<url>"],
+        answer: "<a>",
+      },
+      {
+        question: "Image insert karne ke liye kaun sa element use hota hai?",
+        options: ["<img>", "<image>", "<picture>", "<figure>"],
+        answer: "<img>",
+      },
+      {
+        question: "Sabse bada heading kaun sa tag hai?",
+        options: ["<h6>", "<h3>", "<h1>", "<head>"],
+        answer: "<h1>",
+      },
+      {
+        question: "Line break ke liye kaun sa element use hota hai?",
+        options: ["<break>", "<lb>", "<br>", "<line>"],
+        answer: "<br>",
+      },
+    ],
+    medium: [
+      {
+        question: "Link ko nayi tab me kholne ke liye kya use karte hain?",
+        options: [
+          'target="_blank"',
+          'rel="noopener"',
+          'download',
+          'href="_blank"',
+        ],
+        answer: 'target="_blank"',
+      },
+      {
+        question: "Inme se kaun sa element default inline hota hai?",
+        options: ["<div>", "<section>", "<p>", "<span>"],
+        answer: "<span>",
+      },
+      {
+        question: "Label ko input se logically jodne ke liye kaun si attribute use hoti hai?",
+        options: ["name", "for", "idref", "bind"],
+        answer: "for",
+      },
+      {
+        question: "Image ke 'alt' attribute ka main purpose kya hai?",
+        options: [
+          "Image ka URL dena",
+          "Image ki CSS class dena",
+          "Image ki width set karna",
+          "Screen readers ke liye text description dena",
+        ],
+        answer: "Screen readers ke liye text description dena",
+      },
+      {
+        question: "Ek self-contained content jaise blog post ko represent karne ke liye kaun sa semantic element sahi hai?",
+        options: ["<section>", "<article>", "<aside>", "<main>"],
+        answer: "<article>",
+      },
+    ],
+    hard: [
+      {
+        question: "HTML5 ke liye sahi DOCTYPE kya hai?",
+        options: [
+          "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\">",
+          "<!DOCTYPE XHTML>",
+          "<!DOCTYPE html>",
+          "<!DOCTYPE HTML5>",
+        ],
+        answer: "<!DOCTYPE html>",
+      },
+      {
+        question: "Responsive viewport set karne ke liye sahi meta tag kaun sa hai?",
+        options: [
+          '<meta http-equiv="X-UA-Compatible" content="IE=edge">',
+          '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+          '<meta name="device" content="mobile">',
+          '<meta name="format-detection" content="telephone=no">',
+        ],
+        answer: '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+      },
+      {
+        question: "Inme se kaun sa element HTML me void (self-closing) hota hai?",
+        options: ["<div>", "<span>", "<section>", "<br>"],
+        answer: "<br>",
+      },
+      {
+        question: "Security ke liye target=\"_blank\" ke sath kaun si attribute/value use karna recommended hai?",
+        options: [
+          'rel="nofollow"',
+          'rel="noopener noreferrer"',
+          'referrerpolicy="origin"',
+          'aria-hidden="true"',
+        ],
+        answer: 'rel="noopener noreferrer"',
+      },
+      {
+        question: "Konsa ARIA attribute screen readers ke liye accessible label provide karta hai jab visible text na ho?",
+        options: ["role", "aria-label", "tabindex", "aria-hidden"],
+        answer: "aria-label",
+      },
+    ],
+    type: "live",
+  },
 };
 
 export default questions;
