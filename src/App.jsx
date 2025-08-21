@@ -13,6 +13,7 @@ import Quizzes from "./components/templates/Quizzes";
 import LeaderBoardPage from "./components/templates/LeaderBoardPage";
 import Layout from "./components/templates/Layout";
 import Profile from "./components/templates/Profile";
+import QuizeHistory from "./components/molecules/QuizeHistory";
 const NotFound = lazy(() => import("./components/templates/NotFound"));
 const Home = lazy(() => import("./components/templates/Home"));
 
@@ -63,6 +64,8 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+            <Route path="/history" element={<QuizeHistory/>}/>
           </Route>
 
           {/* Open Routes */}

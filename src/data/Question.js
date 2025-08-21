@@ -98,7 +98,6 @@ const questions = {
     ],
     type:"live"
   },
-
   react: {
     easy: [
       {
