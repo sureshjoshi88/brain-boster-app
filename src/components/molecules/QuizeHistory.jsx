@@ -1,19 +1,27 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import QuizeButtons from './QuizeButtons';
 
 const QuizeHistory = () => {
   const history = useSelector((state) => state.quize.completedQuizzes);
 
-  if (history.length === 0) {
-    return (
-      <div className="flex justify-center items-center h-40">
-        <p className="text-gray-500 text-lg">No quiz history found ❌</p>
-      </div>
-    );
-  }
+  
+
+  // if (history.length === 0) {
+  //   return (
+  //     <div className="flex justify-center items-center h-40">
+  //       <p className="text-gray-500 text-lg">No quiz history found ❌</p>
+  //     </div>
+  //   );
+  // }
 
   return (
-    <div className="p-5">
+    <>
+    <QuizeButtons/>
+  { history.length===0? <div className="flex justify-center items-center h-40">
+        <p className="text-gray-500 text-lg">No quiz history found ❌</p>
+      </div>
+      : <div className="p-5">
       <h2 className="text-2xl font-bold mb-4">📜 Quiz History</h2>
       <table className="w-full border-collapse border border-gray-300">
         <thead>
@@ -37,7 +45,8 @@ const QuizeHistory = () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </div>}
+    </>
   );
 };
 export default QuizeHistory
