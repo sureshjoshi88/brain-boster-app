@@ -11,7 +11,7 @@ const QuizeHistory = () => {
 
   return (
     <>
-    <QuizeButtons/>
+    {/* <QuizeButtons/> */}
   { history.length===0? <div className="flex justify-center items-center h-40">
         <p className="text-gray-500 text-lg">No quiz history found ❌</p>
       </div>

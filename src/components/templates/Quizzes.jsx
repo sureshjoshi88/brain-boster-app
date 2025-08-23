@@ -16,6 +16,7 @@
 // import QuizeButtons from "../molecules/QuizeButtons";
 // import subjects from "../../data/DummyData";
 import { Outlet } from "react-router";
+import QuizeButtons from "../molecules/QuizeButtons";
 
 
 
@@ -198,7 +199,11 @@ const Quizzes = () => {
     //     )}
     //   </div>
     // </div>
+    <>
+    <QuizeButtons/>
     <Outlet/>
+    
+    </>
 
   )
 }

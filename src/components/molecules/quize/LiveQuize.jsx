@@ -90,9 +90,9 @@ const liveSubject = subjects.filter((sub)=>sub.type==='live');
   return (
 
     <div className="bg-gray-50">
-      <div className="p-2">
+      {/* <div className="p-2">
         <QuizeButtons />
-      </div>
+      </div> */}
       <div>
         {!starts ? (
           <div className='grid md:grid-cols-3 gap-4 pb-8'>
