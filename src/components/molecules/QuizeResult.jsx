@@ -8,10 +8,6 @@ const QuizeResult = (props) => {
     const dispatch = useDispatch();
     const history = useSelector(state=>state.quize.completedQuizzes);
 
-console.log(history);
-    
-
-
 const handleSave = () =>{
      dispatch(props.addToHistory()); 
 }
