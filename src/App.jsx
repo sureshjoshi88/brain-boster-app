@@ -36,6 +36,7 @@ function App() {
           <Route path="/" element={<Layout/>}>
             <Route path="/progress" element={<MyProgress />} />
             <Route path='/quizze' element={<Quizzes />} />
+            <Route path="/history" element={<QuizeHistory/>}/>
             <Route path='/profile' element={<Profile />} />
             <Route index  element={<Home />} />
             {/* Protected Routes */}
@@ -65,7 +66,6 @@ function App() {
               }
             />
 
-            <Route path="/history" element={<QuizeHistory/>}/>
           </Route>
 
           {/* Open Routes */}

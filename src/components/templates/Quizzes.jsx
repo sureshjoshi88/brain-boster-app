@@ -22,62 +22,74 @@ import QuizeButtons from "../molecules/QuizeButtons";
 
 const Quizzes = () => {
 
-  const subjects = [
-    {
-      id: "javascript",
-      name: "JavaScript",
-      image: "https://cdn.worldvectorlogo.com/logos/javascript-1.svg",
-      description: "Test your JavaScript knowledge!",
-    },
-    {
-      id: "html",
-      name: "HTML",
-      image: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
-      description: "Explore your HTML skills!",
-    },
-    {
-      id: "react",
-      name: "React",
-      image: "https://cdn.worldvectorlogo.com/logos/react-2.svg",
-      description: "Master your React fundamentals!",
-    },
-    {
-      id: "css",
-      name: "CSS",
-      image: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
-      description: "Style your knowledge with CSS!",
-    },
-    {
-      id: "nodejs",
-      name: "Node.js",
-      image: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
-      description: "Check your backend basics with Node.js!",
-    },
-    {
-      id: "mongodb",
-      name: "MongoDB",
-      image: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
-      description: "Explore your NoSQL skills with MongoDB!",
-    },
-    {
-      id: "expressjs",
-      name: "Express.js",
-      image: "https://cdn.worldvectorlogo.com/logos/express-109.svg",
-      description: "How well do you know Express.js?",
-    },
-    {
-      id: "typescript",
-      name: "TypeScript",
-      image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
-      description: "Put your TypeScript typing to the test!",
-    },
-    {
-      id: "github",
-      name: "GitHub",
-      image: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
-      description: "Version control mastery starts here!",
-    },
-  ];
+ const subjects = [
+  {
+    id: "javascript",
+    name: "JavaScript",
+    image: "https://cdn.worldvectorlogo.com/logos/javascript-1.svg",
+    description: "Test your JavaScript knowledge!",
+    type: "live",
+  },
+  {
+    id: "html",
+    name: "HTML",
+    image: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
+    description: "Explore your HTML skills!",
+    type: "live",
+  },
+  {
+    id: "react",
+    name: "React",
+    image: "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+    description: "Master your React fundamentals!",
+    type: "scheduled",
+  },
+  {
+    id: "css",
+    name: "CSS",
+    image: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
+    description: "Style your knowledge with CSS!",
+    type: "live",
+  },
+  {
+    id: "nodejs",
+    name: "Node.js",
+    image: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+    description: "Check your backend basics with Node.js!",
+    type: "scheduled",
+  },
+  {
+    id: "mongodb",
+    name: "MongoDB",
+    image: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+    description: "Explore your NoSQL skills with MongoDB!",
+    type: "scheduled",
+  },
+  {
+    id: "expressjs",
+    name: "Express.js",
+    image: "https://cdn.worldvectorlogo.com/logos/express-109.svg",
+    description: "How well do you know Express.js?",
+    type: "live",
+  },
+  {
+    id: "typescript",
+    name: "TypeScript",
+    image: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+    description: "Put your TypeScript typing to the test!",
+    type: "scheduled",
+  },
+  {
+    id: "github",
+    name: "GitHub",
+    image: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
+    description: "Version control mastery starts here!",
+    type: "live",
+  },
+];
+
+
+const liveSubject = subjects.filter((sub)=>sub.type==='live');
 
   const dispatch = useDispatch();
 
@@ -148,15 +160,15 @@ const Quizzes = () => {
 
   return (
 
-    <div>
-      <div>
-        <QuizeButtons/>
+    <div className="bg-gray-50">
+      <div className="p-2">
+        <QuizeButtons />
       </div>
       <div>
         {!starts ? (
-          <div className='grid md:grid-cols-3 gap-4'>
-            {subjects.map((subj) => (
-              <div key={subj.id} className="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center mt-2">
+          <div className='grid md:grid-cols-3 gap-4 pb-8'>
+            {liveSubject.map((subj) => (
+              <div key={subj.id} className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center mt-2">
                 <img src={subj.image} alt={subj.name} className="h-20 mb-4" />
                 <h2 className="text-xl font-semibold mb-2">{subj.name}</h2>
                 <p className="text-gray-600 mb-4">{subj.description}</p>
@@ -242,9 +254,9 @@ const Quizzes = () => {
                   </div>
                 </>
               ) : (
-               
+
                 <div>
-                  <QuizeResult score = {score} currentArray={currentArray} resetquize = {resetquize} startTime={startTime} setStarts={setStarts} addToHistory={addToHistory} />
+                  <QuizeResult score={score} currentArray={currentArray} resetquize={resetquize} startTime={startTime} setStarts={setStarts} addToHistory={addToHistory} />
                 </div>
               )}
             </div>
