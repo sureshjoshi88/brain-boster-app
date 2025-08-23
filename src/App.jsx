@@ -14,6 +14,7 @@ import LeaderBoardPage from "./components/templates/LeaderBoardPage";
 import Layout from "./components/templates/Layout";
 import Profile from "./components/templates/Profile";
 import QuizeHistory from "./components/molecules/QuizeHistory";
+import LiveQuize from "./components/molecules/quize/LiveQuize";
 const NotFound = lazy(() => import("./components/templates/NotFound"));
 const Home = lazy(() => import("./components/templates/Home"));
 
@@ -35,8 +36,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/progress" element={<MyProgress />} />
-            <Route path='/quizze' element={<Quizzes />} />
-            <Route path="/history" element={<QuizeHistory/>}/>
+            <Route path='/quizze' element={<Quizzes />} >
+            <Route index element={<LiveQuize/>}/>
+            <Route path="live" element={<LiveQuize/>}/>
+            <Route path="history" element={<QuizeHistory/>}/>
+            
+            </Route>
             <Route path='/profile' element={<Profile />} />
             <Route index  element={<Home />} />
             {/* Protected Routes */}
