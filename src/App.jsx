@@ -42,7 +42,6 @@ function App() {
             <Route path="live" element={<LiveQuize/>}/>
             <Route path="history" element={<QuizeHistory/>}/>
             <Route path="scheduled" element={<ScheduledQuize/>}/>
-            
             </Route>
             <Route path='/profile' element={<Profile />} />
             <Route index  element={<Home />} />

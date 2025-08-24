@@ -16,7 +16,7 @@ const QuizeButtons = () => {
                         Live Quize
                     </NavLink>
                     <NavLink
-                        to=" scheduled"
+                        to="scheduled"
                         className={({ isActive }) =>
                             `p-1.5 rounded-4xl ps-3 pe-3 border cursor-pointer transition duration-300 ease-in-out 
                             ${isActive ? "bg-blue-600 text-white border-blue-600" : "border-gray-400 hover:bg-blue-600 hover:text-white"}`

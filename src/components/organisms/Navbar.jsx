@@ -182,6 +182,8 @@ const Navbar = () => {
           <div className="lg:hidden   flex flex-col space-y-2 mt-4">
             <NavLink
               to="/"
+                            onClick={() => setIsOpen(!isOpen)}
+
               className={({ isActive }) =>
                 `flex items-center gap-1 transition ${isActive
                   ? "text-blue-600 font-semibold border-b-2"
@@ -193,6 +195,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/quizze"
+              onClick={() => setIsOpen(!isOpen)}
               className={({ isActive }) =>
                 `flex items-center gap-1 transition ${isActive
                   ? "text-blue-600 font-semibold border-b-2"
@@ -204,6 +207,8 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/subjects"
+                            onClick={() => setIsOpen(!isOpen)}
+
               className={({ isActive }) =>
                 `flex items-center gap-1 transition ${isActive
                   ? "text-blue-600 font-semibold border-b-2"
@@ -215,6 +220,8 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/leaderboard"
+                            onClick={() => setIsOpen(!isOpen)}
+
               className={({ isActive }) =>
                 `flex items-center gap-1 transition ${isActive
                   ? "text-blue-600 font-semibold border-b-2"
@@ -226,6 +233,8 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/blog"
+                            onClick={() => setIsOpen(!isOpen)}
+
               className={({ isActive }) =>
                 `flex items-center gap-1 transition ${isActive
                   ? "text-blue-600 font-semibold border-b-2"
@@ -237,6 +246,8 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/progress"
+                            onClick={() => setIsOpen(!isOpen)}
+
               className={({ isActive }) =>
                 `flex items-center gap-1 transition ${isActive
                   ? "text-blue-600 font-semibold border-b-2"
@@ -253,7 +264,7 @@ const Navbar = () => {
               </div>
               <div className="flex items-center gap-1 ">
                 <img
-                  src={User}
+                  src={users}
                   alt="userIcon"
                   className="w-7 h-7 rounded-full "
                 />

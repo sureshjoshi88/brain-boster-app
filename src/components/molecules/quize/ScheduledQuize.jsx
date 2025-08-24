@@ -11,6 +11,7 @@ const ScheduledQuize = () => {
                 <img src={subj.image} alt={subj.name} className="h-20 mb-4" />
                 <h2 className="text-xl font-semibold mb-2">{subj.name}</h2>
                 <p className="text-gray-600 mb-4">{subj.description}</p>
+                <button className=' rounded bg-blue-400 px-2 p-1 text-white font-medium hover:bg-blue-500 cursor-pointer'>Upcoming Quize</button>
               </div>
             ))}
           </div>
