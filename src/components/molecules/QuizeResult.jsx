@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
-import { useDispatch ,useSelector} from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 
 
 const QuizeResult = (props) => {
 
     const dispatch = useDispatch();
-    const history = useSelector(state=>state.quize.completedQuizzes);
+    const history = useSelector(state => state.quize.completedQuizzes);
 
-const handleSave = () =>{
-     dispatch(props.addToHistory()); 
-}
-  
+    const handleSave = () => {
+        dispatch(props.addToHistory());
+    }
+
     return (
         <div>
             <div className="text-center">
