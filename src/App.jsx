@@ -15,6 +15,7 @@ import Layout from "./components/templates/Layout";
 import Profile from "./components/templates/Profile";
 import QuizeHistory from "./components/molecules/QuizeHistory";
 import LiveQuize from "./components/molecules/quize/LiveQuize";
+import ScheduledQuize from "./components/molecules/quize/ScheduledQuize";
 const NotFound = lazy(() => import("./components/templates/NotFound"));
 const Home = lazy(() => import("./components/templates/Home"));
 
@@ -40,6 +41,7 @@ function App() {
             <Route index element={<LiveQuize/>}/>
             <Route path="live" element={<LiveQuize/>}/>
             <Route path="history" element={<QuizeHistory/>}/>
+            <Route path="scheduled" element={<ScheduledQuize/>}/>
             
             </Route>
             <Route path='/profile' element={<Profile />} />
