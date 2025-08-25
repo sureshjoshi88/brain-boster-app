@@ -276,12 +276,16 @@ const Navbar = () => {
                 <button className="bg-blue-500 text-white font-semibold hover:bg-blue-600 px-4 py-1 rounded w-full" onClick={signUpUser}>Sign Up</button>
                 <button className="bg-blue-500 text-white font-semibold hover:bg-blue-600 px-4 py-1 rounded w-full mt-1" onClick={loginUser}>Logn In</button>
               </div>
-                : <button
+                : <div>
+                  <button
                   onClick={() => dispatch(logout(), navigate('/'))}
                   className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded"
                 >
                   Logout
-                </button>}
+                </button>
+                    <button className="bg-gray-100 hover:bg-gray-200 px-4 py-1 rounded cursor-pointer hover:border-b-2 hover:border-b-blue-500 " onClick={() => navigate('/profile')}>Profile</button>
+                </div>}
+                
             </div>
           </div>
         )}
