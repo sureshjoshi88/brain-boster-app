@@ -1,6 +1,7 @@
 import React from 'react'
-
+import questions from '../../../data/Question'
 function Topsubjectcard({ subject, index }) {
+    console.log(questions.javascript.easy.length)
     return (
         <>
             <div key={index} className="mb-5">

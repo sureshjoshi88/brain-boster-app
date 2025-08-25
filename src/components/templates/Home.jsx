@@ -8,6 +8,7 @@ import PopularSubjects from "../molecules/dashBoard/PopularSubjects";
 import LatestfromBlog from "../molecules/dashBoard/LatestfromBlog";
 import MiniFooter from "../organisms/Minifooter";
 
+
 function Home() {
 
     const isAuthenticated = localStorage.getItem("currentUser");
