@@ -9,12 +9,14 @@ import LatestfromBlog from "../molecules/dashBoard/LatestfromBlog";
 import MiniFooter from "../organisms/Minifooter";
 
 function Home() {
-    return (
 
+    const isAuthenticated = localStorage.getItem("currentUser");
+    const user = isAuthenticated?JSON.parse(isAuthenticated):"";
+    return (
         <>
             <div className="p-6">
                 <div className="mb-6">
-                    <h2 className="text-2xl font-bold">Welcome back, Suresh joshi</h2>
+                    <h2 className="text-2xl font-bold">Welcome back, {user?.name  || "User"}</h2>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10">
@@ -89,7 +91,7 @@ function Home() {
                     </div>
                 </div>
                 <div>
-                    <MiniFooter/>
+                    <MiniFooter />
                 </div>
 
 
