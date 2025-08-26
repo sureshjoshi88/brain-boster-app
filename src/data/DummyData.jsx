@@ -89,7 +89,7 @@ const subjects = [
     name: "History",
     image: "https://cdn-icons-png.flaticon.com/512/3135/3135731.png",
     description: "Explore the past with History quizzes!",
-    type: "scheduled",
+    type: "live",
   },
 ];
 
