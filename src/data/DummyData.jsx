@@ -1,4 +1,4 @@
- const subjects = [
+const subjects = [
   {
     id: "javascript",
     name: "JavaScript",
@@ -61,6 +61,35 @@
     image: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
     description: "Version control mastery starts here!",
     type: "live",
+  },
+  // 🆕 Added Subjects
+  {
+    id: "science",
+    name: "Science",
+    image: "https://cdn-icons-png.flaticon.com/512/4149/4149678.png",
+    description: "Test your knowledge of Science concepts!",
+    type: "live",
+  },
+  {
+    id: "math",
+    name: "Math",
+    image: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+    description: "Sharpen your skills with Math problems!",
+    type: "scheduled",
+  },
+  {
+    id: "gk",
+    name: "General Knowledge",
+    image: "https://cdn-icons-png.flaticon.com/512/3135/3135773.png",
+    description: "Challenge yourself with GK questions!",
+    type: "live",
+  },
+  {
+    id: "history",
+    name: "History",
+    image: "https://cdn-icons-png.flaticon.com/512/3135/3135731.png",
+    description: "Explore the past with History quizzes!",
+    type: "scheduled",
   },
 ];
 
