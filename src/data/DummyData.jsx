@@ -62,7 +62,7 @@ const subjects = [
     description: "Version control mastery starts here!",
     type: "live",
   },
-  // 🆕 Added Subjects
+ 
   {
     id: "science",
     name: "Science",
@@ -91,6 +91,15 @@ const subjects = [
     description: "Explore the past with History quizzes!",
     type: "live",
   },
+  {
+    id: "physics",
+    name: "Physics",
+    image: "https://cdn-icons-png.flaticon.com/512/3176/3176366.png",
+    description: "Understand the laws of Physics!",
+    type: "scheduled",
+  },
 ];
+
+
 
 export default subjects;
