@@ -1,8 +1,6 @@
 import React from 'react'
-import questions from '../../../data/Question'
 function Topsubjectcard({ subject, index }) {
-    const total = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length
-    console.log(total)
+   
     return (
 
         <>
