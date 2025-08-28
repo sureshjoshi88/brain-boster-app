@@ -1,5 +1,7 @@
 // DashbordData.js
 
+import questions from "./Question";
+
 export const DeshbordCard = [
     { Title: "Quizzes Completed", Value: 48, Image: "/FRAME (1).png" },
     { Title: "Current Streak", Value: "7 Days", Image: "/FRAME (2).png" },
@@ -7,10 +9,15 @@ export const DeshbordCard = [
     { Title: "Current Rank", Value: "#12", Image: "/FRAME (4).png" },
 ];
 
+    const scienceTotal = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length;
+    const historyTotal = questions.history.easy.length + questions.history.hard.length + questions.history.medium.length;
+    // const englishTotal = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length;
+
+
 export const subjects = [
     { title: "Mathematics", percentage: 100, icon: "/FRAME (6).png" },
-    { title: "Science", percentage: 70, icon: "/FRAME (7).png" },
-    { title: "History", percentage: 10, icon: "/FRAME (8).png" },
+    { title: "Science", percentage: scienceTotal, icon: "/FRAME (7).png" },
+    { title: "History", percentage: historyTotal, icon: "/FRAME (8).png" },
     { title: "English", percentage: 75, icon: "/FRAME (9).png" }
 ];
 
