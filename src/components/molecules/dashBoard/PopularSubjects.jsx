@@ -1,6 +1,8 @@
 import React from 'react'
 
+
 function PopularSubjects({ item, index }) {
+   
     return (
         <>
             <div

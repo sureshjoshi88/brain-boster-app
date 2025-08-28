@@ -1,8 +1,10 @@
 import React from 'react'
 import questions from '../../../data/Question'
 function Topsubjectcard({ subject, index }) {
-    // console.log(questions.javascript.easy.length+questions.javascript.medium.length+questions.javascript.hard.length)                                                                                                                                                                                                                                                                                                                                                                                           
+    const total = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length
+    console.log(total)
     return (
+
         <>
             <div key={index} className="mb-5">
                 <div className="flex justify-between items-center mb-1">
