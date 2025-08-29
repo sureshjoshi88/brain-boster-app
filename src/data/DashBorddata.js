@@ -40,8 +40,9 @@ export const FeaturedBlog = {
     description: "Learn how to optimize your study habits…",
     image: "/FRAME16.png",
 };
+const physicsTotal = questions.physics.easy.length + questions.physics.hard.length + questions.physics.medium.length;
 export const SubjectsData = [
-    { id: 1, name: "Physics", quizzes: 45, progress: 65, icon: "/SVG1.png", },
+    { id: 1, name: "Physics", quizzes: physicsTotal, progress: 65, icon: "/SVG1.png", },
     { id: 2, name: "Literature", quizzes: 38, progress: 50, icon: "/SVG2.png", },
     { id: 3, name: "Programming", quizzes: 52, progress: 75, icon: "/SVG3.png", },
     { id: 4, name: "Mathematics", quizzes: 41, progress: 86, icon: "/SVG4.png", },
