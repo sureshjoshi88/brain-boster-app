@@ -12,10 +12,11 @@ export const DeshbordCard = [
     const scienceTotal = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length;
     const historyTotal = questions.history.easy.length + questions.history.hard.length + questions.history.medium.length;
     // const englishTotal = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length;
+    const mathTotal = questions.math.easy.length + questions.math.hard.length + questions.math.medium.length;
 
 
 export const subjects = [
-    { title: "Mathematics", percentage: 100, icon: "/FRAME (6).png" },
+    { title: "Mathematics", percentage: mathTotal, icon: "/FRAME (6).png" },
     { title: "Science", percentage: scienceTotal, icon: "/FRAME (7).png" },
     { title: "History", percentage: historyTotal, icon: "/FRAME (8).png" },
     { title: "English", percentage: 75, icon: "/FRAME (9).png" }
