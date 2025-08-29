@@ -75,7 +75,7 @@ const subjects = [
     name: "Math",
     image: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     description: "Sharpen your skills with Math problems!",
-    type: "scheduled",
+    type: "live",
   },
   {
     id: "gk",
