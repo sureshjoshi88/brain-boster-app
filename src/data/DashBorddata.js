@@ -41,6 +41,7 @@ export const FeaturedBlog = {
     image: "/FRAME16.png",
 };
 const physicsTotal = questions.physics.easy.length + questions.physics.hard.length + questions.physics.medium.length;
+const programingQuizetotal = questions.html.easy.length+questions.html.hard.length+questions.html.medium.length
 export const SubjectsData = [
     { id: 1, name: "Physics", quizzes: physicsTotal, progress: 65, icon: "/SVG1.png", },
     { id: 2, name: "Literature", quizzes: 38, progress: 50, icon: "/SVG2.png", },
