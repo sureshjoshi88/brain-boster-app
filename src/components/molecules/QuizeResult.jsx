@@ -10,6 +10,7 @@ const QuizeResult = (props) => {
 
     const handleSave = () => {
         dispatch(props.addToHistory());
+        props.setStarts(false)
     }
 
     return (
