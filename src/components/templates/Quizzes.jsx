@@ -17,19 +17,13 @@
 // import subjects from "../../data/DummyData";
 import { Outlet } from "react-router";
 import QuizeButtons from "../molecules/QuizeButtons";
-import questions from "../../data/Question";
 
 
 
 
 
 const Quizzes = () => {
-  // let total = 0
-  // for (let subject in questions) {
-  // const { easy = [], medium = [], hard = [] } = questions[subject];
-  //  total = easy.length + medium.length + hard.length;
-  //  console.log(`${subject} Total Questions:`, total);
-  // }
+  
 
 // const liveSubject = subjects.filter((sub)=>sub.type==='live');
 
