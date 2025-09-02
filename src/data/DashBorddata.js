@@ -43,12 +43,13 @@ export const FeaturedBlog = {
 const physicsTotal = questions.physics.easy.length + questions.physics.hard.length + questions.physics.medium.length;
 const programingQuizetotal = questions.html.easy.length + questions.html.hard.length + questions.html.medium.length + questions.css.easy.length + questions.css.hard.length + questions.css.medium.length + questions.javascript.easy.length + questions.javascript.hard.length + questions.javascript.medium.length + questions.react.easy.length + questions.react.hard.length + questions.react.medium.length + questions.expressjs.easy.length + questions.expressjs.hard.length + questions.expressjs.medium.length + questions.github.easy.length + questions.github.hard.length + questions.github.medium.length + questions.mongodb.easy.length + questions.mongodb.hard.length + questions.mongodb.medium.length + questions.nodejs.easy.length + questions.nodejs.hard.length + questions.nodejs.medium.length + questions.typescript.easy.length + questions.typescript.hard.length + questions.expressjs.medium.length;
 
+const hindiLiteratureTotal = questions.hindiLiterature.easy.length + questions.hindiLiterature.hard.length + questions.hindiLiterature.medium.length;
 
 
 export const SubjectsData = [
     { id: 1, name: "Physics", quizzes: physicsTotal, progress: 65, icon: "/SVG1.png", },
-    { id: 2, name: "Literature", quizzes: 38, progress: 50, icon: "/SVG2.png", },
-    { id: 3, name: "Programming", quizzes: programingQuizetotal, progress: 85, icon: "/SVG3.png", },
+    { id: 2, name: "Literature", quizzes: hindiLiteratureTotal, progress: 30, icon: "/SVG2.png", },
+    { id: 3, name: "Programming", quizzes: programingQuizetotal, progress: 90, icon: "/SVG3.png", },
     { id: 4, name: "Mathematics", quizzes: mathTotal, progress: 76, icon: "/SVG4.png", },
 ];
 
