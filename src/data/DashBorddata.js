@@ -9,10 +9,10 @@ export const DeshbordCard = [
     { Title: "Current Rank", Value: "#12", Image: "/FRAME (4).png" },
 ];
 
-    const scienceTotal = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length;
-    const historyTotal = questions.history.easy.length + questions.history.hard.length + questions.history.medium.length;
-    // const englishTotal = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length;
-    const mathTotal = questions.math.easy.length + questions.math.hard.length + questions.math.medium.length;
+const scienceTotal = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length;
+const historyTotal = questions.history.easy.length + questions.history.hard.length + questions.history.medium.length;
+// const englishTotal = questions.gk.easy.length + questions.gk.hard.length + questions.gk.medium.length;
+const mathTotal = questions.math.easy.length + questions.math.hard.length + questions.math.medium.length;
 
 
 export const subjects = [
@@ -41,7 +41,10 @@ export const FeaturedBlog = {
     image: "/FRAME16.png",
 };
 const physicsTotal = questions.physics.easy.length + questions.physics.hard.length + questions.physics.medium.length;
-const programingQuizetotal = questions.html.easy.length+questions.html.hard.length+questions.html.medium.length+questions.css.easy.length+questions.css.hard.length+questions.css.medium.length+questions.javascript.easy.length+questions.javascript.hard.length+questions.javascript.medium.length+questions.react.easy.length+questions.react.hard.length+questions.react.medium.length+questions.expressjs.easy.length+questions.expressjs.hard.length+questions.expressjs.medium.length+questions.github.easy.length+questions.github.hard.length+questions.github.medium.length+questions.mongodb.easy.length+questions.mongodb.hard.length+questions.mongodb.medium.length+questions.nodejs.easy.length+questions.nodejs.hard.length+questions.nodejs.medium.length+questions.typescript.easy.length+questions.typescript.hard.length+questions.expressjs.medium.length
+const programingQuizetotal = questions.html.easy.length + questions.html.hard.length + questions.html.medium.length + questions.css.easy.length + questions.css.hard.length + questions.css.medium.length + questions.javascript.easy.length + questions.javascript.hard.length + questions.javascript.medium.length + questions.react.easy.length + questions.react.hard.length + questions.react.medium.length + questions.expressjs.easy.length + questions.expressjs.hard.length + questions.expressjs.medium.length + questions.github.easy.length + questions.github.hard.length + questions.github.medium.length + questions.mongodb.easy.length + questions.mongodb.hard.length + questions.mongodb.medium.length + questions.nodejs.easy.length + questions.nodejs.hard.length + questions.nodejs.medium.length + questions.typescript.easy.length + questions.typescript.hard.length + questions.expressjs.medium.length;
+
+
+
 export const SubjectsData = [
     { id: 1, name: "Physics", quizzes: physicsTotal, progress: 65, icon: "/SVG1.png", },
     { id: 2, name: "Literature", quizzes: 38, progress: 50, icon: "/SVG2.png", },
