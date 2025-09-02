@@ -45,8 +45,8 @@ const programingQuizetotal = questions.html.easy.length+questions.html.hard.leng
 export const SubjectsData = [
     { id: 1, name: "Physics", quizzes: physicsTotal, progress: 65, icon: "/SVG1.png", },
     { id: 2, name: "Literature", quizzes: 38, progress: 50, icon: "/SVG2.png", },
-    { id: 3, name: "Programming", quizzes: programingQuizetotal, progress: 75, icon: "/SVG3.png", },
-    { id: 4, name: "Mathematics", quizzes: 41, progress: 86, icon: "/SVG4.png", },
+    { id: 3, name: "Programming", quizzes: programingQuizetotal, progress: 85, icon: "/SVG3.png", },
+    { id: 4, name: "Mathematics", quizzes: mathTotal, progress: 76, icon: "/SVG4.png", },
 ];
 
 export const BlogData = [
