@@ -19,7 +19,7 @@ function PopularSubjects({ item, index }) {
                         style={{ width: `${item.progress}%` }}
                     ></div>
                 </div>
-                <Link to=''><button className="mt-2 border border-blue-500 text-blue-500 px-4 py-1 rounded-sm hover:bg-blue-500 hover:text-white font-semibold text-sm">
+                <Link to='/quizze'><button className="mt-2 border border-blue-500 text-blue-500 px-4 py-1 rounded-sm hover:bg-blue-500 hover:text-white font-semibold text-sm">
                     Start Quiz
                 </button></Link>
                 
