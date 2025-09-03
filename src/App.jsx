@@ -13,12 +13,14 @@ import Quizzes from "./components/templates/Quizzes";
 import LeaderBoardPage from "./components/templates/LeaderBoardPage";
 import Layout from "./components/templates/Layout";
 import Profile from "./components/templates/Profile";
-import QuizeHistory from "./components/molecules/QuizeHistory";
+// import QuizeHistory from "./components/molecules/QuizeHistory";
 import LiveQuize from "./components/molecules/quize/LiveQuize";
-import ScheduledQuize from "./components/molecules/quize/ScheduledQuize";
+// import ScheduledQuize from "./components/molecules/quize/ScheduledQuize";
 import ScrollTopPage from "./components/molecules/ScrollTopPage";
 const NotFound = lazy(() => import("./components/templates/NotFound"));
 const Home = lazy(() => import("./components/templates/Home"));
+const QuizeHistory = lazy(()=>import('./components/molecules/QuizeHistory'))
+const ScheduledQuize = lazy(()=>import('./components/molecules/quize/ScheduledQuize'))
 
 function App() {
   return (
