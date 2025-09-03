@@ -16,6 +16,7 @@ import Profile from "./components/templates/Profile";
 import QuizeHistory from "./components/molecules/QuizeHistory";
 import LiveQuize from "./components/molecules/quize/LiveQuize";
 import ScheduledQuize from "./components/molecules/quize/ScheduledQuize";
+import ScrollTopPage from "./components/molecules/ScrollTopPage";
 const NotFound = lazy(() => import("./components/templates/NotFound"));
 const Home = lazy(() => import("./components/templates/Home"));
 
@@ -34,6 +35,7 @@ function App() {
           </div>
         }
       >
+          <ScrollTopPage/>
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/progress" element={<MyProgress />} />
