@@ -13,12 +13,19 @@ import {
   addToHistory
 } from "../../../redux/reducers/quizeSlice"
 import QuizeResult from "../QuizeResult";
-import QuizeButtons from "../QuizeButtons";
 import subjects from "../../../data/DummyData";
+import { BeatLoader } from "react-spinners";
 
 const LiveQuize = () => {
-  
+
+
+  const [liveQuize,setLiveQuize] = useState([]);
+    setTimeout(() => {
 const liveSubject = subjects.filter((sub)=>sub.type==='live');
+      setLiveQuize(liveSubject)
+    }, 1000);
+  
+// const liveSubject = subjects.filter((sub)=>sub.type==='live');
 
   const dispatch = useDispatch();
 
@@ -90,13 +97,18 @@ const liveSubject = subjects.filter((sub)=>sub.type==='live');
   return (
 
     <div className="bg-gray-50">
-      {/* <div className="p-2">
-        <QuizeButtons />
-      </div> */}
-      <div>
+
+      {liveQuize.length<=0?<div className="flex justify-center items-center h-screen w-full fw-bold">
+                        <div>
+                          <h1>
+                            <BeatLoader/>
+                          </h1>
+                          <p className="text-lg font-semibold">Loading...</p>
+                        </div>
+                      </div>:<div>
         {!starts ? (
           <div className='grid md:grid-cols-3 gap-4 pb-8'>
-            {liveSubject.map((subj) => (
+            {liveQuize?.map((subj) => (
               <div key={subj.id} className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center mt-2">
                 <img src={subj.image} alt={subj.name} className="h-20 mb-4" />
                 <h2 className="text-xl font-semibold mb-2">{subj.name}</h2>
@@ -191,7 +203,7 @@ const liveSubject = subjects.filter((sub)=>sub.type==='live');
             </div>
           </div>
         )}
-      </div>
+      </div>}
     </div>
 
   )
