@@ -9,6 +9,15 @@ import CryptoJS from "crypto-js";
 
 
 const Profile = () => {
+const handleInput = ()=>{
+  let password = document.getElementById("inputpass")
+  if(password.type==="password"){
+    password.type = "text"
+  }else{
+     password.type = "password"
+  }
+}
+
   const [user, setUser] = useState("https://cdn-icons-png.flaticon.com/512/149/149071.png")
   useEffect(() => {
     const savedImg = localStorage.getItem("user_img");
@@ -69,7 +78,9 @@ const Profile = () => {
           <p className='font-medium text-xl mt-2'>Name :- {profile.name}</p>
           <p className='font-medium text-xl mt-2'> Email :- {profile.email}</p>
           <p className='font-medium text-xl mt-2'>Password :- {hashPassword.slice(0,12)}</p>
-          <p className='font-medium text-xl mt-2'>Password :- <input type='password' value={profile.password}/></p>
+          <div className='flex font-medium text-xl mt-2 gap-3'>Password :- <div className=''>
+             <input className='border-0 outline-0' id='inputpass' onClick={handleInput} type='password' value={profile.password}/>
+             <button className='border rounded font-semibold text-sm cursor-pointer p-1'>Show Password</button></div></div>
         </div>
       </div>
 
