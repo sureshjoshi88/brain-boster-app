@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { MdPhotoLibrary } from "react-icons/md";
 import { MdPhotoCamera } from "react-icons/md";
 import { IoAddCircle } from "react-icons/io5";
+import { FaEye } from "react-icons/fa";
+
 import CryptoJS from "crypto-js";
 
 
@@ -77,10 +79,9 @@ const handleInput = ()=>{
         <div className='mt-5'>
           <p className='font-medium text-xl mt-2'>Name :- {profile.name}</p>
           <p className='font-medium text-xl mt-2'> Email :- {profile.email}</p>
-          <p className='font-medium text-xl mt-2'>Password :- {hashPassword.slice(0,12)}</p>
-          <div className='flex font-medium text-xl mt-2 gap-3'>Password :- <div className=''>
-             <input className='border-0 outline-0' id='inputpass' onClick={handleInput} type='password' value={profile.password}/>
-             <button className='border rounded font-semibold text-sm cursor-pointer p-1'>Show Password</button></div></div>
+          <div className='flex font-medium text-xl mt-2 gap-3'>Password :- <div className='flex gap-2   px-2 '>
+             <input className='border-0 outline-0 w-28' id='inputpass'  type='password' value={profile.password}/>
+             <button onClick={handleInput} className='  font-semibold text-lg cursor-pointer'><FaEye /></button></div></div>
         </div>
       </div>
 
