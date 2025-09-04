@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { MdPhotoLibrary } from "react-icons/md";
 import { MdPhotoCamera } from "react-icons/md";
 import { IoAddCircle } from "react-icons/io5";
+import CryptoJS from "crypto-js";
+
 
 
 
@@ -28,6 +30,9 @@ const Profile = () => {
   }
 
   const profile = JSON.parse(localStorage.getItem("currentUser"))
+  const hashPassword = CryptoJS.SHA256(profile.password).toString();
+  console.log(hashPassword)
+
 
   return (
     <div className='flex justify-center items-center h-100'>
@@ -63,7 +68,8 @@ const Profile = () => {
         <div className='mt-5'>
           <p className='font-medium text-xl mt-2'>Name :- {profile.name}</p>
           <p className='font-medium text-xl mt-2'> Email :- {profile.email}</p>
-          <p className='font-medium text-xl mt-2'>Password :- {profile.password}</p>
+          <p className='font-medium text-xl mt-2'>Password :- {hashPassword.slice(0,12)}</p>
+          <p className='font-medium text-xl mt-2'>Password :- <input type='password' value={profile.password}/></p>
         </div>
       </div>
 
