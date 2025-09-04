@@ -4,11 +4,6 @@ import { MdPhotoCamera } from "react-icons/md";
 import { IoAddCircle } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
 
-import CryptoJS from "crypto-js";
-
-
-
-
 
 const Profile = () => {
 const handleInput = ()=>{
@@ -41,8 +36,7 @@ const handleInput = ()=>{
   }
 
   const profile = JSON.parse(localStorage.getItem("currentUser"))
-  const hashPassword = CryptoJS.SHA256(profile.password).toString();
-  console.log(hashPassword)
+ 
 
 
   return (
