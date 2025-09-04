@@ -3,7 +3,7 @@ import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Subjects from "./components/templates/Subjects";
-import Blog from "./components/templates/Blog"
+// import Blog from "./components/templates/Blog"
 import ProtectedRoute from "./protectect/ProtectedRoute ";
 import { BeatLoader } from "react-spinners";
 import Login from "./components/templates/Login"
@@ -58,14 +58,14 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route
+            {/* <Route
               path="/blog"
               element={
                 <ProtectedRoute>
                   <Blog />
                 </ProtectedRoute>
               }
-            />
+            /> */}
 
             <Route
               path="/leaderboard"
