@@ -1,4 +1,3 @@
-import React from "react";
 import { DeshbordCard, subjects, TopPerformers, BlogPosts, FeaturedBlog, SubjectsData, BlogData } from "../../data/DashBorddata";
 import { BookText } from "lucide-react";
 import Card from "../molecules/dashBoard/Card";
