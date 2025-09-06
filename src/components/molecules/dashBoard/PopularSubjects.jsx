@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 
 function PopularSubjects({ item, index }) {
-    console.log(item);
     
    
     return (
