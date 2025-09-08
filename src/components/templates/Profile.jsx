@@ -44,7 +44,7 @@ const handleInput = ()=>{
 
       <div>
         <div className='relative'>
-          <img className='h-50 w-50 rounded-full' src={user} alt="user" />
+          <img className='h-50 w-50 rounded-full' src={user} alt="user-img" />
           <input type="file" accept='image/*' onChange={handleimg} name="" id="img" className='hidden' />
           <input
             type="file"

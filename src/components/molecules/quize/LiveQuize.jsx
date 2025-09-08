@@ -19,13 +19,12 @@ import { BeatLoader } from "react-spinners";
 const LiveQuize = () => {
 
 
-  const [liveQuize,setLiveQuize] = useState([]);
-    setTimeout(() => {
-const liveSubject = subjects.filter((sub)=>sub.type==='live');
-      setLiveQuize(liveSubject)
-    }, 1000);
-  
-// const liveSubject = subjects.filter((sub)=>sub.type==='live');
+  const [liveQuize, setLiveQuize] = useState([]);
+  setTimeout(() => {
+    const liveSubject = subjects.filter((sub) => sub.type === 'live');
+    setLiveQuize(liveSubject)
+  }, 1000);
+
 
   const dispatch = useDispatch();
 
@@ -62,9 +61,6 @@ const liveSubject = subjects.filter((sub)=>sub.type==='live');
   const currentArray = questionsData[currentSubject][currentDifficulty];
   const currentQ = currentArray[currentIndex];
 
-
-
-
   const time = new Date();
   time.setMinutes(time.getMinutes() + 1); // 5 minutes
   const {
@@ -87,25 +83,19 @@ const liveSubject = subjects.filter((sub)=>sub.type==='live');
     time.setMinutes(time.getMinutes() + 1);
     restart(time);
   }
-  // const resetTime = () => {
-  //   const time = new Date();
-  //   time.setMinutes(time.getMinutes() + 1);
-  //   restart(time);
-  //   setQuizestart(false);
-  // }
 
   return (
 
     <div className="bg-gray-50">
 
-      {liveQuize.length<=0?<div className="flex justify-center items-center h-screen w-full fw-bold">
-                        <div>
-                          <h1>
-                            <BeatLoader/>
-                          </h1>
-                          <p className="text-lg font-semibold">Loading...</p>
-                        </div>
-                      </div>:<div>
+      {liveQuize.length <= 0 ? <div className="flex justify-center items-center h-screen w-full fw-bold">
+        <div>
+          <h1>
+            <BeatLoader />
+          </h1>
+          <p className="text-lg font-semibold">Loading...</p>
+        </div>
+      </div> : <div>
         {!starts ? (
           <div className='grid md:grid-cols-3 gap-4 pb-8'>
             {liveQuize?.map((subj) => (
