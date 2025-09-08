@@ -8,12 +8,18 @@ const Blog = () => {
         <div>
             <button className='ps-2 pe-2 p-1 rounded bg-blue-500 text-white font-semibold m-3'>Add Blog</button>
         </div>
-      
+       
       <div>
         
         <div>
-            <form action="">
-                
+            <form className='flex justify-center'>
+              <div className='shadow p-2 rounded'>
+                  <input className='border' type="text" name="" id="title"  placeholder='Enter your title'/><br/>
+                <input className='border' type="text" name="" id="title"  placeholder='Enter your title'/><br/>
+                <textarea className='border' name="" id=""></textarea><br/>
+                <input className='border' type="file" name="" id="title"  placeholder='Enter your title'/><br/>
+                <button>Submit</button>
+              </div>
             </form>
         </div>
 
