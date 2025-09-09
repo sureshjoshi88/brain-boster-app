@@ -14,11 +14,11 @@ const Blog = () => {
         <div>
             <form className='flex justify-center'>
               <div className='shadow-2xl shadow-gray-300 p-4 rounded space-y-4'>
-                  <input className='border w-100 rounded p-2' required type="text" name="" id="title"  placeholder='Enter your title'/><br/>
-                <input className='border w-100 rounded p-2' required type="text" name="" id="title"  placeholder='Enter your title'/><br/>
-                <textarea className='border w-100 rounded p-2' required name="" id=""></textarea><br/>
-                <input className='border w-100 rounded p-2' required type="file" name="" id="title"  placeholder='Enter your title'/><br/>
-                <button className='border rounded w-100 p-2' type='submit'>Submit</button>
+                  <input className='border w-100 rounded-full p-2 outline-0' required type="text" name="" id="title"  placeholder='Enter your title'/><br/>
+                <input className='border w-100 rounded-full p-2 outline-0' required type="text" name="" id="title"  placeholder='Enter your heading'/><br/>
+                <input className='border w-100 rounded-full p-2 outline-0' required type="file" name="" id="title"  placeholder='Enter your title'/><br/>
+                <input className='border w-100 rounded-full p-2 outline-0' required name="" id=""placeholder='Enter your description' ></input><br/>
+                <button className='text-white font-semibold rounded-full bg-blue-500  w-100 p-2' type='submit'>Submit</button>
               </div>
             </form>
         </div>
