@@ -4,6 +4,7 @@ import LatestfromBlog from '../molecules/dashBoard/LatestfromBlog'
 
 const Blog = () => {
   const [form,setForm] = useState({title:"",heading:"",description:"",img:""});
+  const [formstate,setFormstate] = useState(false)
   
   const handleForm = (e)=>{
     e.preventDefault()
@@ -16,6 +17,9 @@ const Blog = () => {
     setForm({...form,[e.target.name]:e.target.value})
   }
 
+  const handleAddBlock = () =>{
+    setFormstate(true)
+  }
 
   return (
     <div>
@@ -25,7 +29,7 @@ const Blog = () => {
        
       <div>
         
-        <div>
+      {formstate&&  <div>
             <form className='flex justify-center' onSubmit={handleForm}>
               <div className='shadow-2xl shadow-gray-300 p-4 rounded space-y-4'>
                   <input className='border w-100 rounded-full p-2 outline-0'  value={form.title} onChange={handleChange} required type="text" name="title" id="title"  placeholder='Enter your title'/><br/>
@@ -35,7 +39,7 @@ const Blog = () => {
                 <button className='text-white font-semibold rounded-full bg-blue-500 w-100 p-2' >Submit</button>
               </div>
             </form>
-        </div>
+        </div>}
 
          <div className="p-4 mt-4  rounded-1">
                             <h2 className="text-xl font-bold mb-4">Latest from Blog</h2>
