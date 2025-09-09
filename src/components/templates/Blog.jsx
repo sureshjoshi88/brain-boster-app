@@ -17,14 +17,14 @@ const Blog = () => {
     setForm({...form,[e.target.name]:e.target.value})
   }
 
-  const handleAddBlock = () =>{
-    setFormstate(true)
-  }
+  // const handleAddBlock = () =>{
+  //   setFormstate(true)
+  // }
 
   return (
     <div>
         <div>
-            <button className='ps-2 pe-2 p-1 rounded bg-blue-500 text-white font-semibold m-3'>Add Blog</button>
+            <button onClick={()=>setFormstate((pre)=>!pre)} className='ps-2 pe-2 p-1 rounded bg-blue-500 text-white font-semibold m-3'>Add Blog</button>
         </div>
        
       <div>
