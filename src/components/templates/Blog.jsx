@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BlogData } from '../../data/DashBorddata'
 import LatestfromBlog from '../molecules/dashBoard/LatestfromBlog'
 
@@ -6,7 +6,7 @@ const Blog = () => {
   const [title,setTitle] = useState('')
   const [heading,setHeading] = useState('')
   const [description,setDescription] = useState('')
-  const [img,setImg] = useState(null)
+  const [img,setImg] = useState('')
   const [formstate,setFormstate] = useState(false)
   const [array,setArray] = useState([]);
   
@@ -18,15 +18,35 @@ const Blog = () => {
       description,
       img
     }
+   
+
+    
+const handleImageChange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImg(reader.result); // base64 string aa jayegi
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+   const allblog =  [...array ,data];
+   setArray(allblog)
+   localStorage.setItem("brainblog",JSON.stringify(array))
     setTitle("")
-    setImg("")
+    setImg(null)
     setHeading("")
     setDescription("")
-    setArray([...array ,data])
   
   }
   
-  console.log(array)
+  useEffect(()=>{
+    const allBlog = JSON.parse(localStorage.getItem("brainblog"))||[];
+    console.log(allBlog);
+    
+  },[])
  
 
  
