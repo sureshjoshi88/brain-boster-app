@@ -32,7 +32,7 @@ const Blog = () => {
 
     const allblog = [...array, data];
     setArray(allblog)
-    localStorage.setItem("brainblog", JSON.stringify(array))
+    localStorage.setItem("brainblog", JSON.stringify(allblog))
     setTitle("")
     setImg("")
     setHeading("")
@@ -46,6 +46,7 @@ const Blog = () => {
   useEffect(() => {
     const allBlog = JSON.parse(localStorage.getItem("brainblog")) || [];
     console.log(allBlog);
+    setArray(allBlog)
   }, [array])
 
 
