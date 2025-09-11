@@ -6,7 +6,7 @@ const Blog = () => {
   const [title, setTitle] = useState('')
   const [heading, setHeading] = useState('')
   const [description, setDescription] = useState('')
-  const [img, setImg] = useState('')
+  const [image, setImage] = useState('')
   const [formstate, setFormstate] = useState(false)
   const [array, setArray] = useState([]);
 
@@ -15,7 +15,7 @@ const Blog = () => {
       if (file) {
         const reader = new FileReader();
         reader.onloadend = () => {
-          setImg(reader.result); // base64 string aa jayegi
+          setImage(reader.result); // base64 string aa jayegi
         };
         reader.readAsDataURL(file);
       }
@@ -27,14 +27,14 @@ const Blog = () => {
       title,
       heading,
       description,
-      img
+      image
     }
 
     const allblog = [...array, data];
     setArray(allblog)
     localStorage.setItem("brainblog", JSON.stringify(allblog))
     setTitle("")
-    setImg("")
+    setImage("")
     setHeading("")
     setDescription("")
   }
@@ -76,22 +76,8 @@ const Blog = () => {
           <h2 className="text-xl font-bold mb-4">Latest from Blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
            {array.map((item, index) => (
-<div
-                key={index}
-                className="bg-white rounded-xl  overflow-hidden shadow-xl">
-                <img src={item.img}alt={item.title}className="w-full h-48 object-cover"/>
-
-                <div className="p-4">
-                    <p className="text-sm text-blue-600 font-medium mb-1">
-                        {item.category} &nbsp; <span className="text-gray-400">· {item.readTime}</span>
-                    </p>
-                    <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-600 mb-3">{item.description}</p>
-                    <a href="#"className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-2">
-                        Read More <span className="text-lg"> →</span>
-                    </a>
-                </div>
-            </div>            ))}
+              <LatestfromBlog key={index} item={item} />
+            ))}
             {BlogData.map((item) => (
               <LatestfromBlog key={item.id} item={item} />
             ))}
