@@ -39,7 +39,10 @@ const Blog = () => {
     setImage("")
     setHeading("")
     setDescription("")
-    fileInputRef.current.value = "";
+    
+    if(fileInputRef.current){
+      fileInputRef.current.value = "";
+    }
 
   }
 
