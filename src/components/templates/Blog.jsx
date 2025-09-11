@@ -47,7 +47,7 @@ const Blog = () => {
     const allBlog = JSON.parse(localStorage.getItem("brainblog")) || [];
     console.log(allBlog);
     setArray(allBlog)
-  }, [array])
+  }, []);
 
 
 
@@ -75,6 +75,23 @@ const Blog = () => {
         <div className="p-4 mt-4  rounded-1">
           <h2 className="text-xl font-bold mb-4">Latest from Blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+           {array.map((item, index) => (
+<div
+                key={index}
+                className="bg-white rounded-xl  overflow-hidden shadow-xl">
+                <img src={item.img}alt={item.title}className="w-full h-48 object-cover"/>
+
+                <div className="p-4">
+                    <p className="text-sm text-blue-600 font-medium mb-1">
+                        {item.category} &nbsp; <span className="text-gray-400">· {item.readTime}</span>
+                    </p>
+                    <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                    <p className="text-sm text-gray-600 mb-3">{item.description}</p>
+                    <a href="#"className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-2">
+                        Read More <span className="text-lg"> →</span>
+                    </a>
+                </div>
+            </div>            ))}
             {BlogData.map((item) => (
               <LatestfromBlog key={item.id} item={item} />
             ))}
