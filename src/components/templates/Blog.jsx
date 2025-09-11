@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BlogData } from '../../data/DashBorddata'
 import LatestfromBlog from '../molecules/dashBoard/LatestfromBlog'
 
@@ -9,6 +9,8 @@ const Blog = () => {
   const [image, setImage] = useState('')
   const [formstate, setFormstate] = useState(false)
   const [array, setArray] = useState([]);
+  const fileInputRef = useRef(null);
+
 
  const handleImageChange = (e) => {
       const file = e.target.files[0];
@@ -37,6 +39,8 @@ const Blog = () => {
     setImage("")
     setHeading("")
     setDescription("")
+    fileInputRef.current.value = "";
+
   }
 
   
@@ -64,7 +68,7 @@ const Blog = () => {
             <div className='shadow-2xl shadow-gray-300 p-4 rounded space-y-4'>
               <input className='border w-100 rounded-full p-2 ' value={title} onChange={(e) => setTitle(e.target.value)} required type="text" name="title" id="title" placeholder='Enter your title' /><br />
               <input className='border w-100 rounded-full p-2 ' value={heading} onChange={(e) => setHeading(e.target.value)} required type="text" name="heading" id="" placeholder='Enter your heading' /><br />
-              <input className='border w-100 rounded-full p-2 '  onChange={handleImageChange} required type="file" name="img" accept="image/*"
+              <input className='border w-100 rounded-full p-2' ref={fileInputRef}  onChange={handleImageChange} required type="file" name="img" accept="image/*"
                 id="" placeholder='Enter your title' /><br />
               <input className='border w-100 rounded-full p-2 ' value={description} onChange={(e) => setDescription(e.target.value)} required name="description" id="" placeholder='Enter your description' ></input><br />
               <button className='text-white font-semibold rounded-full bg-blue-500 w-100 p-2' >Submit</button>
