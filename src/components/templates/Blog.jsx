@@ -58,7 +58,7 @@ const Blog = () => {
   return (
     <div>
       <div className='flex justify-center m-3'>
-        <button onClick={() => setFormstate((pre) => !pre)} className='px-5 p-1 rounded bg-blue-500 text-white font-semibold m-3 cursor-pointer'>Add Blog</button>
+        <button onClick={() => setFormstate((pre) => !pre)} className='px-5 p-1 rounded hover:bg-blue-600 bg-blue-500 text-white font-semibold m-3 cursor-pointer'>Add Blog</button>
       </div>
 
       <div>
