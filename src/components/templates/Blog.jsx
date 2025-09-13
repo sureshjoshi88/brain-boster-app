@@ -71,7 +71,7 @@ const Blog = () => {
               <input className='border w-120 rounded-full p-2 ' value={description} onChange={(e) => setDescription(e.target.value)} required name="description" id="" placeholder='Enter your description' ></input><br />
               <input className='border w-120 rounded-full p-2' ref={fileInputRef} onChange={handleImageChange} required type="file" name="img" accept="image/*"
                 id="" placeholder='Enter your title' /><br />
-              <button className='text-white font-semibold rounded-full bg-blue-500 w-100 p-2' >Submit</button>
+              <button className='text-white font-semibold rounded-full bg-blue-500 w-120 sm:w-100 p-2' >Submit</button>
             </div>
           </form>
         </div>}
