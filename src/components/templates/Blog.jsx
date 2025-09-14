@@ -56,14 +56,14 @@ const Blog = () => {
 
 
   return (
-    <div>
+    <div className='relative'>
       <div className='flex justify-center m-3'>
         <button onClick={() => setFormstate((pre) => !pre)} className='px-5 p-1 rounded hover:bg-blue-600 bg-blue-500 text-white font-semibold m-3 cursor-pointer'>Add Blog</button>
       </div>
 
       <div>
 
-        {formstate && <div>
+        {formstate && <div className='absolute bg-white left-1/4 top-32'>
           <form className='flex justify-center p-2 w-full' onSubmit={handleForm}>
             <div className='shadow-2xl shadow-gray-300 p-4 rounded space-y-4 '>
               <input className='border md:w-120 rounded-full p-2 w-full outline-blue-500' value={title} onChange={(e) => setTitle(e.target.value)} required type="text" name="title" id="title" autoFocus placeholder='Enter your title' /><br />
