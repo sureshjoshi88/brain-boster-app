@@ -63,9 +63,9 @@ const Blog = () => {
 
       <div>
 
-        {formstate && <div className='absolute bg-white left-1/4 top-32'>
+        {formstate && <div className='absolute bg-white left-1/4 top-32 shadow-2xl shadow-gray-300'>
           <form className='flex justify-center p-2 w-full' onSubmit={handleForm}>
-            <div className='shadow-2xl shadow-gray-300 p-4 rounded space-y-4 '>
+            <div className='p-4 rounded space-y-4 '>
               <input className='border md:w-120 rounded-full p-2 w-full outline-blue-500' value={title} onChange={(e) => setTitle(e.target.value)} required type="text" name="title" id="title" autoFocus placeholder='Enter your title' /><br />
               <input className='border md:w-120 rounded-full p-2 w-full outline-blue-500' value={heading} onChange={(e) => setHeading(e.target.value)} required type="text" name="heading" id="" placeholder='Enter your heading' /><br />
               <input className='border md:w-120 rounded-full p-2 w-full outline-blue-500' value={description} onChange={(e) => setDescription(e.target.value)} required name="description" id="" placeholder='Enter your description' ></input><br />
