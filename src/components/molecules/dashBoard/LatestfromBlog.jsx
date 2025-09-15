@@ -14,6 +14,7 @@ function LatestfromBlog({ item }) {
                     </p>
                     <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
                     <p className="text-sm text-gray-600 mb-3">{item.description}</p>
+                    <p className="text-sm text-gray-700 mb-3">{item?.date}</p>
                     <a href="#"className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-2">
                         Read More <span className="text-lg"> →</span>
                     </a>
