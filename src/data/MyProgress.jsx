@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 const dummyData = {
-  totalQuizzes: 147,
+  totalQuizzes: 145,
   averageScore: 84.5,
   accuracyRate: 91.2,
   currentStreak: 12,
@@ -17,7 +17,7 @@ const dummyData = {
     { name: "Mathematics", score: 50 },
     { name: "Science", score: 92 },
     { name: "History", score: 65 },
-    { name: "Language Arts", score: 88 },
+    { name: "Language Arts", score: 95 },
     
     { name: "Geography", score: 31 },
   ],
