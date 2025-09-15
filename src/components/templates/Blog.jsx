@@ -23,13 +23,19 @@ const Blog = () => {
     }
   }
 
+  
   const handleForm = (e) => {
     e.preventDefault()
+    const dates = new Date();
+    const date  = dates.getDate();
+    const month  = dates.getMonth();
+    const year  = dates.getFullYear();
     const data = {
       title,
       heading,
       description,
-      image
+      image,
+      date:`${date}-${month}-${year}`
     }
 
     const allblog = [...array, data];
@@ -49,7 +55,6 @@ const Blog = () => {
 
   useEffect(() => {
     const allBlog = JSON.parse(localStorage.getItem("brainblog")) || [];
-    console.log(allBlog);
     setArray(allBlog)
   }, []);
 
