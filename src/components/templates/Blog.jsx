@@ -79,10 +79,10 @@ const Blog = () => {
         <div className="p-4 mt-4  rounded-1">
           <h2 className="text-xl font-bold mb-4">Latest from Blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {array.map((item, index) => (
+            {array?.map((item, index) => (
               <LatestfromBlog key={index} item={item} />
             ))}
-            {BlogData.map((item) => (
+            {BlogData?.map((item) => (
               <LatestfromBlog key={item.id} item={item} />
             ))}
           </div>
