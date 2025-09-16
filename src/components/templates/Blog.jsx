@@ -87,7 +87,7 @@ const Blog = () => {
             {array?.map((item, index) => (
               <LatestfromBlog key={index} item={item} />
             ))}
-            {BlogData?.map((item) => (
+            {BlogData?.map((item) => (  
               <LatestfromBlog key={item.id} item={item} />
             ))}
           </div>
