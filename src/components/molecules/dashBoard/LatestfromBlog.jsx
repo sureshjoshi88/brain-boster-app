@@ -6,7 +6,7 @@ function LatestfromBlog({ item }) {
             <div
                 key={item.id}
                 className="bg-white rounded-xl  overflow-hidden shadow-xl">
-                <img src={item.image}alt={item.title}className="w-full h-48 object-cover"/>
+                <img src={item.image}alt={item.title}className="w-full h-48 object-cover cursor-pointer"/>
 
                 <div className="p-4">
                     <p className="text-sm text-blue-600 font-medium mb-1">
