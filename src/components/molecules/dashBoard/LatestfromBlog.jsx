@@ -7,7 +7,6 @@ function LatestfromBlog({ item }) {
                 key={item.id}
                 className="bg-white rounded-xl  overflow-hidden shadow-xl">
                 <img src={item.image}alt={item.title}className="w-full h-48 object-cover cursor-pointer"/>
-
                 <div className="p-4">
                     <p className="text-sm text-blue-600 font-medium mb-1">
                         {item.category} &nbsp; <span className="text-gray-400">· {item.readTime}</span>

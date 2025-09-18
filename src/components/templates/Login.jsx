@@ -17,7 +17,7 @@ const  LoginForm = ()=>{
     const dispatch = useDispatch()
 
 
-// 🔒 Zod Schema for validation
+//  Zod Schema for validation
     const loginSchema = z.object({
     email: z
     .string()
