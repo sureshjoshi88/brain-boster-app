@@ -129,11 +129,7 @@ const  LoginForm = ()=>{
                     Login
                 </button>
 
-                {/* <div className="my-4 flex items-center justify-center">
-                    <hr className="w-full border-gray-300" />
-                    <span className="px-2 text-sm text-gray-500">Or continue with</span>
-                    <hr className="w-full border-gray-300" />
-                </div> */}
+            
 
                 <div className="flex justify-between space-x-3 gap-3 mt-4 ">
                     <div className="flex-1 border border-gray-300 py-2 rounded-md hover:bg-gray-100 transition text-center rounded-2">
