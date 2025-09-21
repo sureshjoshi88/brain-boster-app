@@ -1,13 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { email, z } from "zod";
+import {  z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NavLink,Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { signup } from "../../redux/reducers/userSlice";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/reducers/userSlice";
-import { da } from "zod/v4/locales";
 
 
 
