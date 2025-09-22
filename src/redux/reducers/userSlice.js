@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import { db } from "../../firebase/config";
-import { addDoc, collection, query, where, getDocs  } from "firebase/firestore"
+import { addDoc, collection, query, where, getDocs } from "firebase/firestore"
 
 
 export const signupUser = createAsyncThunk(
@@ -43,35 +43,32 @@ export const loginUser = createAsyncThunk(
 
 
 
-const userSlice=createSlice({
-    name:'user',
-    initialState:{
-        currentUser:JSON.parse(localStorage.getItem('currentUser'))||null,
-        allUsers:JSON.parse(localStorage.getItem('allUsers'))||[]
-    },
-    reducers:{
-        logout:(state)=>{
-            state.currentUser='';
-            localStorage.removeItem('currentUser');
-            localStorage.removeItem("user_img")
+const userSlice = createSlice({
+  name: 'user',
+  initialState: {
+    currentUser: JSON.parse(localStorage.getItem('currentUser')) || null,
+    allUsers: JSON.parse(localStorage.getItem('allUsers')) || []
+  },
+  reducers: {
+    logout: (state) => {
+      state.currentUser = '';
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem("user_img")
 
-        }
-    },
-     extraReducers: (builder) => {
+    }
+  },
+  extraReducers: (builder) => {
     builder
-    .addCase(signupUser.fulfilled, (state, action) => {
-      state.currentUser = action.payload;
-      localStorage.setItem("currentUser", JSON.stringify(state.currentUser));
-      state.allUsers.push(action.payload);
-      localStorage.setItem("allUsers", JSON.stringify(state.allUsers));
-    })
-     .addCase(loginUser.fulfilled, (state, action) => {
+      .addCase(signupUser.fulfilled, (state, action) => {
+        state.currentUser = action.payload;
+        localStorage.setItem("currentUser", JSON.stringify(state.currentUser));
+        state.allUsers.push(action.payload);
+        localStorage.setItem("allUsers", JSON.stringify(state.allUsers));
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
         state.currentUser = action.payload;
         localStorage.setItem("currentUser", JSON.stringify(state.currentUser));
       });
-
-
-    
   }
 })
 
