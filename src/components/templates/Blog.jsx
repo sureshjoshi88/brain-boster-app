@@ -69,6 +69,7 @@ const Blog = () => {
       <div>
 
         {formstate && <div className='absolute bg-white left-1/4 top-32 shadow-2xl shadow-gray-300'>
+        <button className='bg-red-600 p-1' onClick={setFormstate(false)}>X</button>
           <form className='flex justify-center p-2 w-full' onSubmit={handleForm}>
             <div className='p-4 rounded space-y-4 '>
               <input className='border md:w-120 rounded-full p-2 w-full outline-blue-500' value={title} onChange={(e) => setTitle(e.target.value)} required type="text" name="title" id="title" autoFocus placeholder='Enter your title' /><br />
