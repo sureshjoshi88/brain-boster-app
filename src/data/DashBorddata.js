@@ -5,7 +5,7 @@ import questions from "./Question";
 export const DeshbordCard = [
     { Title: "Quizzes Completed", Value: 48, Image: "/FRAME (1).png" },
     { Title: "Current Streak", Value: "7 Days", Image: "/FRAME (2).png" },
-    { Title: "Total Coins", Value: 2450, Image: "/FRAME (3).png" },
+    { Title: "Total Coins", Value: 2455, Image: "/FRAME (3).png" },
     { Title: "Current Rank", Value: "#12", Image: "/FRAME (4).png" },
 ];
 
