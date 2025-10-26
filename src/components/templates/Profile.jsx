@@ -71,10 +71,10 @@ const handleInput = ()=>{
 
         </div>
         <div className='mt-5'>
-          <p className='font-medium text-xl mt-2'>Name :- {profile.name}</p>
-          <p className='font-medium text-xl mt-2'> Email :- {profile.email}</p>
+          <p className='font-medium text-xl mt-2'>Name :- {profile?.name}</p>
+          <p className='font-medium text-xl mt-2'> Email :- {profile?.email}</p>
           <div className='flex font-medium text-xl mt-2 gap-3'>Password :- <div className='flex gap-2   px-2 '>
-             <input className='border-0 outline-0 w-28' id='inputpass'  type='password' value={profile.password}/>
+             <input className='border-0 outline-0 w-28' id='inputpass'  type='password' value={profile?.password}/>
              <button onClick={handleInput} className='  font-semibold text-lg cursor-pointer'><FaEye /></button></div></div>
         </div>
       </div>
