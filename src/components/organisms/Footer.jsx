@@ -18,7 +18,7 @@ const Footer = () => {
                         <li><Link className="text-white no-underline hover:underline hover:text-blue-500" to="/">Home</Link></li>
                         <li><Link className="text-white no-underline hover:underline hover:text-blue-500" to="/subjects ">Subjects</Link></li>
                         <li><Link className="text-white no-underline hover:underline hover:text-blue-500" to="/leaderboard">Leaderboard</Link></li>
-                        <li><Link className="text-white no-underline hover:underline hover:text-blue-500" href="#">Blog</Link></li>
+                        <li><Link className="text-white no-underline hover:underline hover:text-blue-500" to="/blog">Blog</Link></li>
                     </ul>
                 </div>
 
