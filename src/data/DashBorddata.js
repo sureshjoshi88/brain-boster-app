@@ -23,10 +23,10 @@ export const subjects = [
 ];
 
 export const TopPerformers = [
-    { id: 1, name: "Sarah Chen", points: 2840, image: "/FRAME10.png" },
+    { id: 1, name: "Sarah Chen", points: 2800, image: "/FRAME10.png" },
     { id: 2, name: "Mike Johnson", points: 2650, image: "/FRAME11.png" },
-    { id: 3, name: "Emma Davis", points: 2450, image: "/FRAME12.png" },
-    { id: 4, name: "Alex Kim", points: 2320, image: "/FRAME13.png" },
+    { id: 3, name: "Emma Davis", points: 2400, image: "/FRAME12.png" },
+    { id: 4, name: "Alex Kim", points: 2300, image: "/FRAME13.png" },
     { id: 5, name: "Lisa Wang", points: 2180, image: "/FRAME15.png" },
 ];
 
