@@ -9,12 +9,12 @@ import {
 } from "lucide-react";
 
 const dummyData = {
-  totalQuizzes: 145,
+  totalQuizzes: 147,
   averageScore: 84.5,
   accuracyRate: 91.2,
   currentStreak: 12,
   subjects: [
-    { name: "Mathematics", score: 50 },
+    { name: "Mathematics", score: 55 },
     { name: "Science", score: 92 },
     { name: "History", score: 65 },
     { name: "Language Arts", score: 95 },
